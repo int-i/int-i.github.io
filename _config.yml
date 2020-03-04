@@ -1,11 +1,13 @@
 title: "인하대학교 인트아이"
-description: "인하대학교 정보통신공학과 프로그래밍 소모임 인트아이 기술 블로그입니다"
+description: "인하대학교 정보통신공학과 프로그래밍 소모임 인트아이 기술 블로그"
 url: "https://int-i.github.io/"
 timezone: Asia/Seoul
 permalink: pretty
 
 author:
   name: 인하대학교 인트아이
+  email: int-i@example.com
+  tel: 010-1234-5678
 
 plugins:
   - jekyll-feed

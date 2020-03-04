@@ -1,0 +1,26 @@
+{% capture _content %}
+<footer class="footer">
+  <div class="container container--dense">
+    <header class="footer__title">{{ site.title }}</header>
+    <div class="footer__content">
+      <ul class="horizontal-list">
+        <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
+          {{ site.description }}
+        </li>
+        {% if site.author.tel %}
+        <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
+          Tel: <a class="link footer__link" href="tel:{{ site.author.tel }}">{{ site.author.tel }}</a>
+        </li>
+        {% endif %}
+        {% if site.author.email %}
+        <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
+          Email: <a class="link footer__link" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+        </li>
+        {% endif %}
+      </ul>
+      Copyright © {{ site.author.name }}, All rights reserved.
+    </div>
+  </div>
+</footer>
+{% endcapture %}
+{{ _content | strip_newlines | remove: "  " }}

@@ -79,6 +79,41 @@
   height: 24px;
 }
 
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 68px;
+  color: #eee;
+  transition: all 0.5s;
+  border-bottom: 1px #eee solid;
+}
+
+.nav.active {
+  color: #231f20;
+  background-color: #fff;
+}
+
+.nav__horizontal-item::before {
+  color: #eee !important;
+}
+
+.nav__link {
+  color: #eee;
+  transition: color 0.5s;
+}
+
+.nav__link:hover {
+  color: #397eff;
+}
+
 /* Footer */
 .footer {
   color: #777;

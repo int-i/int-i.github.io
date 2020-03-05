@@ -1,0 +1,23 @@
+.horizontal-list {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  list-style-type: none;
+}
+
+.horizontal-item {
+  float: left;
+}
+
+.horizontal-item::before {
+  float: left;
+  padding: 0 1rem;
+}
+
+.horizontal-item + .horizontal-item::before {
+  content: '|';
+}
+
+.horizontal-item--dense::before {
+  padding: 0 0.5rem;
+}

@@ -1,0 +1,21 @@
+.nav {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  border-bottom: 1px rgba($on-surface-color, 0.12) solid;
+}
+
+.nav__horizontal-item::before {
+  color: rgba($on-surface-color, 0.87);
+}
+
+.nav__link {
+  color: rgba($on-surface-color, 0.87);
+  transition: color 0.5s;
+}
+
+.nav__link:hover {
+  color: $secondary-color;
+}

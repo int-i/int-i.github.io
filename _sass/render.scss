@@ -1,0 +1,147 @@
+.render {
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgba($on-surface-color, 0.6);
+
+  /* Ignore `h1` tag */
+  h1 {
+    display: none;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 1rem 0;
+    color: rgba($on-surface-color, 0.87);
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  h6 {
+    font-size: 1.1rem;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 50vh;
+    margin: 0 auto;
+  }
+
+  a {
+    color: $primary-color;
+    background-image: linear-gradient(90deg, $primary-color, $primary-color);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 0% 0.0625em;
+    transition: background-size 0.5s;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  
+  a:focus,
+  a:hover {
+    background-size: 100% 0.0625em;
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba($on-background-color, 0.05);
+    color: rgba($on-surface-color, 0.87);
+    border-left: 0.25rem rgba($on-surface-color, 0.05) solid;
+  }
+
+  blockquote >:first-child {
+    margin-top: 0;
+  }
+
+  blockquote >:last-child {
+    margin-bottom: 0;
+  }
+
+  code {
+    padding: 0.25rem;
+    color: rgba($on-surface-color, 0.87);
+    background-color: rgba($on-background-color, 0.05);
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.8em;
+  }
+
+  figure.highlight {
+    margin: 0;
+  }
+
+  pre {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: rgba($on-background-color, 0.05);
+  }
+
+  pre > code {
+    background-color: transparent;
+    font-size: 1rem;
+  }
+
+  .task-list-item {
+    list-style-type: none;
+  }
+  
+  .task-list-item input {
+    margin: 0 0.4rem 0 -1.1rem;
+    vertical-align: middle;
+  }
+
+  table {
+    margin: 1rem 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  table th {
+    color: rgba($on-surface-color, 0.87);
+    font-weight: bold;
+  }
+  
+  table td,
+  table th {
+    padding: 6px 13px;
+    border: 1px #2f2f2f solid;
+  }
+  
+  table tr:nth-child(2n) {
+    background-color: rgba($on-background-color, 0.05);
+  }
+
+  del {
+    color: rgba($on-surface-color, 0.38);
+  }
+
+  hr {
+    margin: 1rem 0;
+    border: none;
+    border-top: 1px rgba($on-surface-color, 0.12) solid;
+  }
+}

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<div class="container grid grid--double-stage">
+  <section>
+    {% for post in paginator.posts %}
+    <article class="card">
+      <a class="no-text-decoration" href="{{ post.url | relative_url }}">
+        <header class="title card__title">{{ post.title | escape }}</header>
+        <div class="content card__content">{{ post.excerpt | strip_html | truncate: 270 }}</div>
+      </a>
+      <ul class="hashtags">
+        {% for tag in post.tags %}
+          <li class="hashtag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+      <div class="content card__metadata">
+        <span><time datetime="{{ post.date }}">{{ post.date | date_to_string }}</time> · by {{ site.data.authors[post.author].name }}</span>
+      </div>
+    </article>
+    {% endfor %}
+    
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+      {% else %}
+      <span>&laquo; Prev</span>
+      {% endif %}
+
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <em>{{ page }}</em>
+        {% elsif page == 1 %}
+        <a href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+        {% else %}
+        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+      {% else %}
+      <span>Next &raquo;</span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </section>
+  <section>
+    <article class="card">
+      <header class="title card__title card__title--small">Tag</header>
+      <div class="content card__content">
+        <ul class="hashtags">
+          {% assign sorted_tags = site.tags | sort %}
+          {% for tag in sorted_tags %}
+            <li class="hashtag">{{ tag | first }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+  </section>
+</div>

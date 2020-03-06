@@ -1,0 +1,16 @@
+.hashtags {
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 1rem;
+  list-style-type: none;
+}
+
+.hashtag {
+  display: inline;
+  font-weight: normal;
+  color: mix($primary-color, #fff);
+}
+
+.hashtag::before {
+  content: '#';
+}

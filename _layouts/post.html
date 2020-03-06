@@ -3,7 +3,22 @@ layout: default
 ---
 
 <section class="container">
-  <article class="render">
-    {{ content }}
+  <article>
+    <header class="post__header">
+      <h1 class="title">{{ page.title | escape }}</h1>
+      <div class="content">
+        <time datetime="{{ page.date }}">{{ page.date | date_to_string }}</time> · by {{ site.data.authors[page.author].name }}
+      </div>
+    </header>
+    <section class="post__content">
+      <div class="content render">
+        {{ content }}
+      </div>
+      <ul class="hashtags">
+        {% for tag in page.tags %}
+          <li class="hashtag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    </section>
   </article>
 </section>

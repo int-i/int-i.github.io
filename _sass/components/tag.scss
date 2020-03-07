@@ -8,7 +8,7 @@
 .hashtag {
   display: inline;
   font-weight: normal;
-  color: mix($primary-color, #fff);
+  color: mix($primary-color, $on-surface-color);
 }
 
 .hashtag::before {

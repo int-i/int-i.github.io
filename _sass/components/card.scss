@@ -1,5 +1,5 @@
 .card {
-  background-color: rgba(#fff, 0.05);
+  background-color: rgba($on-background-color, 0.05);
   padding: 1rem 2rem;
   margin: 1rem 0;
 }
@@ -13,5 +13,5 @@
 }
 
 .card__metadata {
-  color: rgba(#fff, 0.38);
+  color: rgba($on-surface-color, 0.38);
 }

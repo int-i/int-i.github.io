@@ -94,6 +94,7 @@
     margin: 1rem 0;
     padding: 1rem;
     background-color: rgba($on-background-color, 0.05);
+    overflow-x: auto;
   }
 
   pre:first-child {

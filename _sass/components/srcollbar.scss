@@ -2,14 +2,19 @@
   width: 1rem;
 }
 
+::-webkit-scrollbar:horizontal {
+  padding: 1rem;
+  height: 0.5rem;
+}
+
 ::-webkit-scrollbar-track {
-  background: #eee;
+  background-color: #424242;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bcbdc0;
+  background-color: $primary-color;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #777;
+  background-color: mix($primary-color, $on-background-color);
 }

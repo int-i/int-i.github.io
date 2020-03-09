@@ -65,14 +65,12 @@
   color: #e0e0e0;
   text-align: center;
   line-height: 3rem;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
 }
 
 .to-top:hover {
   background-color: #343434
-}
-
-@media (max-width: 1023px) {
-  .to-top {
-    display: none;
-  }
 }

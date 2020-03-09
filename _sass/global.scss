@@ -4,7 +4,26 @@
 }
 
 .post__content {
-  padding-top: 1rem;
+  padding: 1rem 0;
+}
+
+.post__relative {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box__nav {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgba($on-surface-color, 0.38);
+}
+
+.box__title {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgba($on-surface-color, 0.6);
 }
 
 .title {
@@ -30,6 +49,10 @@
 
 .no-text-decoration {
   text-decoration: none;
+}
+
+.text-align-right {
+  text-align: right;
 }
 
 .to-top {

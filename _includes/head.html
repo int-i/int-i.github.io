@@ -8,32 +8,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Theme Color -->
-  <!-- <meta name="theme-color" content="#">
+  <meta name="theme-color" content="#bbdefb">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-navbutton-color" content="#"> -->
+  <meta name="msapplication-navbutton-color" content="#bbdefb">
 
   <!-- Fullscreen -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <!-- Icon -->
-  <!-- <link rel="icon" sizes="any" href="./images/logo.svg" type="image/svg+xml">
-  <link rel="icon" sizes="192x192" href="./images/icon192.png" type="image/png">
-  <link rel="apple-touch-icon" href="./images/icon180.png">
-  <meta name="msapplication-square310x310logo" content="./images/icon310.png"> -->
+  <link rel="icon" sizes="any" href="{{ "/assets/img/icon.svg" | relative_url }}" type="image/svg+xml">
+  <link rel="icon" sizes="192x192" href="{{ "/assets/img/icon192.png" | relative_url }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ "/assets/img/icon180.png" | relative_url }}">
+  <meta name="msapplication-square310x310logo" content="{{ "/assets/img/icon310.png" | relative_url }}">
 
   <!-- Open Graph Protocol -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}">
   <meta property="og:title" content="{{ page.title }} - {{ site.title }}">
   <meta property="og:description" content="{{ site.description }}">
-  <!-- <meta property="og:image" content="{{ "/assets/img/icon512.png" | relative_url }}"> -->
+  <meta property="og:image" content="{{ "/assets/img/icon512.png" | relative_url }}">
 
   <!-- Twitter Summary Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ page.title }} - {{ site.title }}">
   <meta name="twitter:description" content="{{ site.description }}">
-  <!-- <meta name="twitter:image" content="{{ "/assets/img/icon512.png" | relative_url }}"> -->
+  <meta name="twitter:image" content="{{ "/assets/img/icon512.png" | relative_url }}">
 
   {% if page.title %}
   <title>{{ page.title }} - {{ site.title }}</title>

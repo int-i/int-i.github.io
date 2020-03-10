@@ -24,7 +24,7 @@
 
   <!-- Open Graph Protocol -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page.title }} - {{ site.title }}">
   <meta property="og:description" content="{{ site.description }}">
   <meta property="og:image" content="{{ "/assets/img/icon512.png" | relative_url }}">
@@ -41,7 +41,7 @@
   <title>{{ site.title }}</title>
   {% endif %}
 
-  <link rel="canonical" href="{{ site.url }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="preconnect" href="https://fonts.gstatic.com/">
   <link rel="preconnect" href="https://www.google-analytics.com/">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">

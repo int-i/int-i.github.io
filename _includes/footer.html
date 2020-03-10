@@ -1,8 +1,10 @@
 <footer class="footer">
   <div class="container container--dense">
-    <header class="title footer__title">{{ site.title }}</header>
+    <header>
+      <a class="title footer__title" href="{{ site.url }}">{{ site.title }}</a>
+    </header>
     <div class="content footer__content">
-      <ul class="horizontal-list">
+      <ul class="list">
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
           {{ site.description }}
         </li>

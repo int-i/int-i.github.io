@@ -122,7 +122,7 @@ ptr = NULL; // `ptr` 저장된 주소값을 삭제
 ptr = 0;
 ```
 
-> C++에서 `NULL`이 0과 동일하기 때문에 발생하는 여러 문제를 해결하기 위해 포인터만을 위한 키워드 `nullptr` 사용을 권장합니다.
+> C++에서 `NULL`이 `0`과 동일하기 때문에 발생하는 여러 문제를 해결하기 위해 널 포인터만을 위한 키워드 `nullptr` 사용을 권장합니다.
 
 `delete`는 자동으로 해당 포인터가 `NULL`인지 확인하기 때문에 아래와 같은 코드는 불필요한 코드입니다.
 
@@ -294,7 +294,7 @@ int y = point.second; // 2
 >     int age;
 > };
 >
-> void print_person(const Persion& person) {
+> void print_person(const Person& person) {
 >     std::cout << person.name << "(" << person.age << ")" << std::endl;
 > }
 >
@@ -387,7 +387,7 @@ duck_ptr->sing();
     };
     ```
 
-    만약 `n`에 상수 리터럴이 할당될 것이라면 아래와 같이 쓸 수 있다.
+    만약 `n`이 상수 리터럴이라면 아래와 같이 쓸 수 있습니다.
 
     ```cpp
     class A {

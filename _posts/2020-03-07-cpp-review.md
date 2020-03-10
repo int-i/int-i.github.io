@@ -91,10 +91,8 @@ ptr = &another_val; // OK
 > #include <iostream>
 >
 > const volatile int i = 10;
-> auto ptr_const = &i;
-> ptr_const = 100; // ERROR
-> auto ptr_nonconst = const_cast<int*>(&i);
-> *ptr_nonconst = 100; // OK
+> i = 100; // ERROR
+> *const_cast<int*>(&i) = 100; // OK
 > std::cout << i << std::endl; // 100
 > ```
 >

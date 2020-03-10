@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="container">
+  <h1 class="title">Tags</h1>
+  <br>
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
+    <section>
+      {% assign tag_name = tag | first %}
+      {% assign tag_posts = tag | last %}
+      <h2 id="{{ tag_name }}" class="box__title">#{{ tag_name }}</h2>
+      <ul class="list">
+        {% for post in tag_posts %}
+          <li class="vertical-item">
+            <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

@@ -47,6 +47,19 @@
   white-space: nowrap;
 }
 
+.link--animated {
+  background-image: linear-gradient(90deg, $primary-color, $primary-color);
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  background-size: 0% 0.0625em;
+  transition: background-size 0.5s;
+}
+
+.link--animated:focus,
+.link--animated:hover {
+  background-size: 100% 0.0625em;
+}
+
 .no-text-decoration {
   text-decoration: none;
 }

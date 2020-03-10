@@ -1,4 +1,4 @@
-.horizontal-list {
+.list {
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -20,4 +20,8 @@
 
 .horizontal-item--dense::before {
   padding: 0 0.5rem;
+}
+
+.vertical-item {
+  margin: 0.5rem 0;
 }

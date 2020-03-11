@@ -6,7 +6,7 @@ category: cpp
 tags: [cpp, syntax, review]
 ---
 
-이 글은 작년 한 해 동안 배운 C++ 문법을 요약 정리한 문서입니다. C++만의 고유한 특징과 더 나은 코드를 작성하기 위해 같이 알아두면 좋은 내용 위주로 정리했습니다 `if`, `for`과 같이 타 언어에도 공통으로 존재하는 문법은 생략되었으니 기초적인 부분이 필요하시면 강의노트와 함께 복습하시기를 권장합니다.
+이 글은 작년 한 해 객체지향 프로그래밍 과목에서 동안 배운 C++ 문법을 요약 정리한 문서입니다. C++만의 고유한 특징과 더 나은 코드를 작성하기 위해 같이 알아두면 좋은 내용 위주로 정리했습니다. `if`, `for`과 같이 타 언어에도 공통으로 존재하는 문법은 생략되었으니 기초적인 부분이 필요하시면 강의노트와 함께 복습하시기를 권장합니다.
 
 ## 변수와 상수
 
@@ -49,7 +49,7 @@ const int i = 42;
 int const i = 42;
 ```
 
-> C++에서 `#define`을 이용한 상수 선언은 변수의 타입 검사가 불가능하기 때문에 지양하는 방식입니다. 상수값이 컴파일시간 내에 확정됨을 보증해야 한다면 `constexpr` 사용을 고려해보세요.
+> C++에서 `#define`을 이용한 상수 선언은 변수의 타입 검사가 불가능하기 때문에 지양하는 방식입니다. 상수값이 컴파일시간 내에 확정됨이 보장되어야 한다면 `constexpr` 사용을 고려해보세요.
 >
 > ```cpp
 > constexpr int i = 42;
@@ -73,12 +73,12 @@ ptr = &another_val; // ERROR
 *ptr = 20; // OK
 ```
 
-상수형 포인터는 포인터가 가리키는 주소를 변경할 수 없는 포인터를 말합니다. 이는 단순히 상수를 가리키는 포인터(Pointer to const value)와 구분해야 합니다.
+상수형 포인터는 포인터가 가리키는 주소를 변경할 수 없는 포인터를 말합니다. 이는 단순히 상수를 가리키는 포인터(Pointer to const value)와 구분되어야 합니다.
 
 ```cpp
 int val = 10;
 int another_val = 100;
-const int* ptr = &val;
+const int* ptr = &val; // Pointer to const value
 ptr = &another_val; // OK
 *ptr = 20; // ERROR
 ```
@@ -177,6 +177,13 @@ int main(int argc, char *argv[]) {
 int array[5] = { 1, 2, 3, 4, 5 };
 ```
 
+배열은 첨자연산자(`[]`)를 이용해 배열 요소에 접근할 수 있습니다.
+
+```cpp
+int array[5] = { 1, 2, 3, 4, 5 };
+int element0 = array[0]; // 1
+```
+
 변수의 크기를 가져오는 `sizeof` 연산자를 이용해 배열의 길이를 알아낼 수 있습니다.  `std::size_t`는 어떤 객체나 값이 포함할 수 있는 최대 크기의 데이터를 표현하는 타입입니다.
 
 ```cpp
@@ -190,15 +197,9 @@ std::size_t size = sizeof(array) / sizeof(array[0]); // 5
 > #include <array>
 >
 > std::array<int, 5> modern_array { 1, 2, 3, 4, 5 };
+> int element0 = modern_array[0]; // 1
 > auto size = modern_array.size(); // 5
 > ```
-
-배열은 첨자연산자(`[]`)를 이용해 배열 요소에 접근할 수 있습니다.
-
-```cpp
-int array[5] = { 1, 2, 3, 4, 5 };
-int element0 = array[0]; // 1
-```
 
 배열은 포인터로도 표현될 수 있습니다. 이때 배열 포인터의 값은 배열의 첫 번째 요소의 주소값과 동일합니다.
 
@@ -211,11 +212,11 @@ void array_fn0(int *array) {
 void array_fn1(int array[5]) {
 }
 
-void array_fn0(int array[]) {
+void array_fn2(int array[]) {
 }
 ```
 
-> C++ Core Guidelines에서는 함수의 매개변수로의 포인터 사용을 지양합니다. 포인터를 사용하면 함수의 매개변수로 배열이 들어갈 때 배열 크기 정보가 소멸합니다. 따라서 `std::span`을 이용해 배열을 넘기거나 `std::array`로 정의된 배열을 사용하는 것이 바람직합니다.
+> C++ Core Guidelines에서는 함수의 매개변수로의 포인터 사용을 지양합니다. 배열 포인터를 사용하면 함수의 매개변수로 배열이 들어갈 때 함수 안에서 배열의 크기를 알 수 없습니다. 따라서 `std::span`을 이용해 배열을 넘기거나 `std::array`로 정의된 배열을 사용하는 것이 바람직합니다.
 >
 > 참고: [C++ Array to Pointer Decay](https://blog.seulgi.kim/2017/10/cpp-array-to-pointer-decay.html)
 
@@ -432,7 +433,7 @@ duck_ptr->sing();
 
 참고: [C++ Constructor Member Initializer List](https://blog.naver.com/krinlion/40138012756)
 
-멤버변수와 매개변수의 이름이 같을 때도 초기화 리스트를 사용하지만, `this`를 이용하면 초기화 리스트 없이 값을 초기화할 수 있습니다. 따라서 이 경우는 초기화 리스트를 반드시 사용해야 하는 경우가 아닙니다. 
+멤버변수와 매개변수의 이름이 같을 때도 초기화 리스트를 사용하지만, `this`를 이용하면 초기화 리스트 없이 값을 초기화할 수 있습니다. 따라서 이 경우는 초기화 리스트를 반드시 사용해야 하는 경우가 아닙니다.
 
 ```cpp
 class A {

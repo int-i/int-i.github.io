@@ -3,14 +3,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="application-name" content="{{ site.title }}">
   <meta name="author" content="{{ site.author.name }}">
+  {% if page.excerpt %}
+  <meta name="description" content="{{ page.excerpt | strip_html | truncate: 100 }}">
+  {% else %}
   <meta name="description" content="{{ site.description }}">
+  {% endif %}
+  <meta name="generator" content="Jekyll v3.8.5">
   <meta name="keywords" content="Inha University,ICE,Programming,Study Group,인하대학교,정보통신공학과,프로그래밍,소모임,블로그">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Theme Color -->
-  <meta name="theme-color" content="#bbdefb">
+  <meta name="theme-color" content="#121212">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="msapplication-navbutton-color" content="#bbdefb">
+  <meta name="msapplication-navbutton-color" content="#121212">
 
   <!-- Fullscreen -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -26,13 +31,21 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page.title }} - {{ site.title }}">
+  {% if page.excerpt %}
+  <meta property="og:description" content="{{ page.excerpt | strip_html | truncate: 100 }}">
+  {% else %}
   <meta property="og:description" content="{{ site.description }}">
+  {% endif %}
   <meta property="og:image" content="{{ "/assets/img/icon512.png" | relative_url }}">
 
   <!-- Twitter Summary Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ page.title }} - {{ site.title }}">
+  {% if page.excerpt %}
+  <meta name="twitter:description" content="{{ page.excerpt | strip_html | truncate: 100 }}">
+  {% else %}
   <meta name="twitter:description" content="{{ site.description }}">
+  {% endif %}
   <meta name="twitter:image" content="{{ "/assets/img/icon512.png" | relative_url }}">
 
   {% if page.title %}

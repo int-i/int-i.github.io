@@ -51,3 +51,9 @@ Front Matter 아래에 [Markdown](https://guides.github.com/features/mastering-m
 [2020-01-27-welcome.md](./_posts/2020-01-27-welcome.md) 파일을 참고
 
 최종적으로 사용자 글 URL은 `https://int-i.github.io/category/yyyy-mm-dd/title/` 형태로 생성됨
+
+## 글 이미지 업로드
+
+`assets/img/posts/`에 `yyyy-mm-dd-title` 디렉토리를 생성 후, 해당 디렉토리에 이미지를 업로드
+
+[2020-01-27-welcome](./assets/img/posts/2020-01-27-welcome/) 디렉토리 참고

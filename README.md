@@ -57,3 +57,9 @@ Front Matter 아래에 [Markdown](https://guides.github.com/features/mastering-m
 `assets/img/posts/`에 `yyyy-mm-dd-title` 디렉토리를 생성 후, 해당 디렉토리에 이미지를 업로드
 
 [2020-01-27-welcome](./assets/img/posts/2020-01-27-welcome/) 디렉토리 참고
+
+## License
+
+[jekyll-compress-html](http://jch.penibelst.de/) is licensed under a [MIT License](https://github.com/penibelst/jekyll-compress-html/blob/master/LICENSE) by Anatol Broder.
+
+[normalize.css](github.com/necolas/normalize.css) is licensed under a [MIT License](https://github.com/necolas/normalize.css/blob/master/LICENSE.md) by Nicolas Gallagher and Jonathan Neal.

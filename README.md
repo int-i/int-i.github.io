@@ -54,9 +54,9 @@ Front Matter 아래에 [Markdown](https://guides.github.com/features/mastering-m
 
 ## 글 이미지 업로드
 
-`assets/img/posts/`에 `yyyy-mm-dd-title` 디렉토리를 생성 후, 해당 디렉토리에 이미지를 업로드
+`assets/posts/`에 `yyyy-mm-dd-title` 디렉토리를 생성 후, 해당 디렉토리에 이미지를 업로드
 
-[2020-01-27-welcome](./assets/img/posts/2020-01-27-welcome/) 디렉토리 참고
+[2020-01-27-welcome](./assets/posts/2020-01-27-welcome/) 디렉토리 참고
 
 ## License
 

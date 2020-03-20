@@ -1,15 +1,29 @@
 <head>
+  {% if page.title %}
+    {% capture title %}{{ page.title }} - {{ site.title }}{% endcapture %}
+  {% else %}
+    {% capture title %}{{ site.title }}{% endcapture %}
+  {% endif %}
+
+  {% if page.excerpt %}
+    {% capture description %}{{ page.excerpt | strip_html | truncate: 100 }}{% endcapture %}
+  {% else %}
+    {% capture description %}{{ site.description }}{% endcapture %}
+  {% endif %}
+
+  {% if page.tags %}
+    {% capture keywords %}{{ page.tags | join: "," }}{% endcapture %}
+  {% else %}
+    {% capture keywords %}Inha University,ICE,Programming,Study Group,인하대학교,정보통신공학과,프로그래밍,소모임,블로그{% endcapture %}
+  {% endif %}
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="application-name" content="{{ site.title }}">
   <meta name="author" content="{{ site.author.name }}">
-  {% if page.excerpt %}
-  <meta name="description" content="{{ page.excerpt | strip_html | truncate: 100 }}">
-  {% else %}
-  <meta name="description" content="{{ site.description }}">
-  {% endif %}
+  <meta name="description" content="{{ description }}">
   <meta name="generator" content="Jekyll v3.8.5">
-  <meta name="keywords" content="Inha University,ICE,Programming,Study Group,인하대학교,정보통신공학과,프로그래밍,소모임,블로그">
+  <meta name="keywords" content="{{ keywords }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Theme Color -->
@@ -30,29 +44,17 @@
   <!-- Open Graph Protocol -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:title" content="{{ page.title }} - {{ site.title }}">
-  {% if page.excerpt %}
-  <meta property="og:description" content="{{ page.excerpt | strip_html | truncate: 100 }}">
-  {% else %}
-  <meta property="og:description" content="{{ site.description }}">
-  {% endif %}
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
   <meta property="og:image" content="{{ "/assets/img/icon512.png" | relative_url }}">
 
   <!-- Twitter Summary Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ page.title }} - {{ site.title }}">
-  {% if page.excerpt %}
-  <meta name="twitter:description" content="{{ page.excerpt | strip_html | truncate: 100 }}">
-  {% else %}
-  <meta name="twitter:description" content="{{ site.description }}">
-  {% endif %}
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
   <meta name="twitter:image" content="{{ "/assets/img/icon512.png" | relative_url }}">
 
-  {% if page.title %}
-  <title>{{ page.title }} - {{ site.title }}</title>
-  {% else %}
-  <title>{{ site.title }}</title>
-  {% endif %}
+  <title>{{ title }}</title>
 
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="preconnect" href="https://fonts.gstatic.com/">

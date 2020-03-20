@@ -21,6 +21,14 @@ layout: minify
   <aside>
     <a class="to-top no-text-decoration" href="#top">↑</a>
   </aside>
+
+  <script>
+    if ('serviceWorker' in navigator){
+      window.addEventListener('load',function(){
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
 </body>
 
 </html>

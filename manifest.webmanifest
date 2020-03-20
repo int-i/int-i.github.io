@@ -1,0 +1,32 @@
+{
+    "name": "인하대학교 인트아이",
+    "short_name": "인트아이",
+    "description": "인하대학교 정보통신공학과 프로그래밍 소모임 인트아이 스터디 블로그",
+    "icons": [
+        {
+            "src": "/assets/img/icon180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icon310.png",
+            "sizes": "310x310",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "https://int-i.github.io/?utm_source=a2hs",
+    "display": "standalone",
+    "background_color": "#121212",
+    "theme_color": "#121212",
+    "lang": "ko"
+}

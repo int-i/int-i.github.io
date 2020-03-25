@@ -267,7 +267,9 @@ union Color {
 };
 ```
 
-> C++ Core Guidelines에서는 `union` 대신 `std::any`를 사용할 것을 권장합니다.
+> C++ Core Guidelines에서는 `union` 대신 `std::variant`를 사용할 것을 권장합니다.
+>
+> 참고: [`std::variant`](https://openmynotepad.tistory.com/50)
 
 `union`을 남용하는 코드는 일반적으로 설계가 잘못된 것으로 보여지며, 상속과 열거형 등으로 고쳐 쓰는 것이 바람직합니다.
 

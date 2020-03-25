@@ -26,6 +26,8 @@ feed:
 kramdown:
   input: GFM
 
+excerpt_separator: "##"
+
 paginate: 5
 paginate_path: "/page/:num/"
 

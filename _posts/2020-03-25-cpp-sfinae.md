@@ -6,6 +6,8 @@ category: cpp
 tags: [cpp, syntax, template, sfinae, type]
 ---
 
+> 템플릿 오류를 이용한 함수 오버로딩 테크닉
+
 SFINAE는 Substitution Failure Is Not An Error(치환 실패는 오류가 아님)의 약자로, 템플릿 매개변수에 자료형이나 값을 넣을 수 없어도 컴파일 **오류가 발생하지 않고** 해당 템플릿에 대해서는 코드 생성을 무시하는 현상을 말합니다.
 템플릿 메타 프로그래밍의 기초가 되는 기법으로, 템플릿의 매개변수(타입 이름 등) 입력에 제약을 걸어주고 함수 오버로딩 시 프로그래머가 함수 선택을 제어할 수 있게 합니다.
 
@@ -17,7 +19,7 @@ SFINAE는 Substitution Failure Is Not An Error(치환 실패는 오류가 아님
 #include <iostream>
 
 struct Case {
-    using inner_t = int; // `inner_t`를 정의
+    using inner_t = int; // `inner_t`를 정의, `Case::inner_t`는 `int`
 };
 
 template<typename T>

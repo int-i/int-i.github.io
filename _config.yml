@@ -1,6 +1,7 @@
-title: "인하대학교 인트아이"
-description: "인하대학교 정보통신공학과 프로그래밍 소모임 인트아이 스터디 블로그"
-url: "https://int-i.github.io"
+title: 인하대학교 인트아이
+description: 인하대학교 정보통신공학과 프로그래밍 소모임 인트아이 스터디 블로그
+url: https://int-i.github.io
+baseurl: ""
 timezone: Asia/Seoul
 permalink: /:categories/:year-:month-:day/:title/
 
@@ -30,7 +31,7 @@ kramdown:
 excerpt_separator: "##"
 
 paginate: 5
-paginate_path: "/page/:num/"
+paginate_path: /page/:num/
 
 sass:
   style: compressed

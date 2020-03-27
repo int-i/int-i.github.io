@@ -17,11 +17,11 @@ Jekyll로 블로그 자체를 만드는 방법에 대해서는 [Jekyll로 나만
 `<title>` 태그는 HTML의 `<head>` 요소 안 쪽에 위치해야 하며 페이지마다 고유한 제목을 만들어야 합니다.
 
 ```html
-{% if page.title %}
-  {% capture title %}{% raw %}{{ page.title }}{% endraw %} - {% raw %}{{ site.title }}{% endraw %}{% endcapture %}
+{% raw %}{% if page.title %}
+  {% capture title %}{{ page.title }} - {{ site.title }}{% endcapture %}
 {% else %}
-  {% capture title %}{% raw %}{{ site.title }}{% endraw %}{% endcapture %}
-{% endif %}
+  {% capture title %}{{ site.title }}{% endcapture %}
+{% endif %}{% endraw %}
 <title>{% raw %}{{ title }}{% endraw %}</title>
 ```
 
@@ -29,11 +29,11 @@ Jekyll로 블로그 자체를 만드는 방법에 대해서는 [Jekyll로 나만
 `<description>` 태그는 `<title>` 태그와 마찬가지로 HTML의 `<head>` 요소 안 쪽에 위치해야 합니다.
 
 ```html
-{% if page.excerpt %}
-  {% capture description %}{% raw %}{{ page.excerpt | strip_html | truncate: 100 }}{% endraw %}{% endcapture %}
+{% raw %}{% if page.excerpt %}
+  {% capture description %}{{ page.excerpt | strip_html | truncate: 100 }}{% endcapture %}
 {% else %}
-  {% capture description %}{% raw %}{{ site.description }}{% endraw %}{% endcapture %}
-{% endif %}
+  {% capture description %}{{ site.description }}{% endcapture %}
+{% endif %}{% endraw %}
 <meta name="description" content="{% raw %}{{ description }}{% endraw %}">
 ```
 

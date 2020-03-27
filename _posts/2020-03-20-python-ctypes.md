@@ -1,5 +1,5 @@
 ---
-title: "Python에서 C/C++ 프로그램 사용하기 (with ctypes)"
+title: "Python에서 C/C++ 함수 사용하기 (with ctypes)"
 date: 2020-03-20
 author: Astro36
 category: python

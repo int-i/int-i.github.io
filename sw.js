@@ -6,8 +6,8 @@ const { ExpirationPlugin } = expiration;
 const { registerRoute } = routing;
 const { CacheFirst, StaleWhileRevalidate } = strategies;
 
-core.clientsClaim();
 core.skipWaiting();
+core.clientsClaim();
 
 // Cache Google Fonts
 registerRoute(

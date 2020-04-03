@@ -57,21 +57,15 @@
   <title>{{ title }}</title>
 
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="preconnect" href="https://fonts.gstatic.com/">
-  <link rel="preconnect" href="https://storage.googleapis.com/">
-  <link rel="preconnect" href="https://www.google-analytics.com/">
   <link rel="preconnect" href="https://cdn.jsdelivr.net/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link rel="preconnect" href="https://storage.googleapis.com/" crossorigin="anonymous">
+  <link rel="preconnect" href="https://www.google-analytics.com/">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <link rel="manifest" href="{{ "/manifest.webmanifest" | relative_url }}">
 
   {% feed_meta %}
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159909547-1"></script>
-  <script>
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js',new Date());
-    gtag('config', 'UA-159909547-1');
-  </script>
+  {% include gtag.html %}
 </head>

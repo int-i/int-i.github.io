@@ -1,23 +1,4 @@
 <script>
-  window.MathJax = {
-    loader: {
-      load: ['input/tex-base', 'output/svg']
-    },
-    options: {
-      renderActions: {
-        find: [10, function (doc) {
-          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-            const display = !!node.type.match(/; *mode=display/);
-            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-            const text = document.createTextNode('');
-            node.parentNode.replaceChild(text, node);
-            math.start = { node: text, delim: '', n: 0 };
-            math.end = { node: text, delim: '', n: 0 };
-            doc.math.push(math);
-          }
-        }, '']
-      }
-    },
-  };
+  window.MathJax={loader:{load:['input/tex-base','output/svg']},options:{renderActions:{findScript:[10,function(t){for(const e of document.querySelectorAll('script[type^="math/tex"]')){const n=!!e.type.match(/; *mode=display/),o=new t.options.MathItem(e.textContent,t.inputJax[0],n),d=document.createTextNode('');e.parentNode.replaceChild(d,e),o.start={node:d,delim:'',n:0},o.end={node:d,delim:'',n:0},t.math.push(o)}},'']}}};
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>

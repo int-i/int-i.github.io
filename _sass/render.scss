@@ -66,6 +66,11 @@
     }
   }
 
+  strong {
+    color: rgba($on-surface-color, 0.87);
+    font-weight: bold;
+  }
+
   blockquote {
     margin: 1rem 0;
     padding: 1rem;

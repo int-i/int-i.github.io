@@ -42,5 +42,21 @@ registerRoute(
   }),
 );
 
+// Cache jsDelivr CDN Assets
+registerRoute(
+  /^https:\/\/cdn\.jsdelivr\.net/,
+  new CacheFirst({
+    cacheName: 'jsdelivr',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 60 * 60 * 24 * 14, // 14 Days
+      }),
+    ],
+  }),
+);
+
 // Offline Google Analytics
 googleAnalytics.initialize();

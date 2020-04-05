@@ -7,7 +7,9 @@ tags: [github, jekyll, html]
 ---
 
 [Jekyll](https://jekyllrb.com/)은 정적 사이트(static site) 생성기로 주로 블로그 제작에 이용됩니다.
+
 GitHub Pages는 Jekyll로 웹페이지를 생성하는 기능을 제공하기 때문에 이를 이용하면 쉽게 개인 블로그를 제작할 수 있습니다.
+
 다만, GitHub Pages에서 제공되는 Jekyll은 외부 플러그인을 임의로 설치할 수 없기 때문에 [GitHub Pages Dependencies](https://pages.github.com/versions/)을 확인해 본인이 사용할 플러그인이 지원되는지 확인합니다.
 
 참고: [About GitHub Pages and Jekyll](https://help.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll)
@@ -74,7 +76,8 @@ sass:
 
 ### assets
 
-`assets/css/main.scss`를 열어 아래와 같이 `_sass`에서 코드를 불러오게 합니다. `---`은 Jekyll이 컴파일할 파일을 인식하게 하므로 삭제하면 안됩니다.
+`assets/css/main.scss`를 열어 아래와 같이 `_sass`에서 코드를 불러오게 합니다.
+`---`은 Jekyll이 컴파일할 파일을 인식하게 하므로 삭제하면 안됩니다.
 
 ```scss
 ---
@@ -91,7 +94,9 @@ sass:
 
 ### html
 
-Jekyll이 생성하는 HTML 파일은 불필요한 공백이 너무 많이 발생합니다. `{% raw %}{{- variable -}}{% endraw %}`과 `{% raw %}{%- flow -%}{% endraw %}`으로 [Liquid 템플릿](https://shopify.github.io/liquid/)에서 생성되는 공백을 어느정도 지울 수 있지만, `-`를 넣어줘야 하는 불편함과 HTML에 직접 입력된 공백은 지울 수 없어 [HTML 압축 템플릿](http://jch.penibelst.de/)을 이용했습니다.
+Jekyll이 생성하는 HTML 파일은 불필요한 공백이 너무 많이 발생합니다.
+
+`{% raw %}{{- variable -}}{% endraw %}`과 `{% raw %}{%- flow -%}{% endraw %}`으로 [Liquid 템플릿](https://shopify.github.io/liquid/)에서 생성되는 공백을 어느정도 지울 수 있지만, `-`를 넣어줘야 하는 불편함과 HTML에 직접 입력된 공백은 지울 수 없어 [HTML 압축 템플릿](http://jch.penibelst.de/)을 이용했습니다.
 
 게시글 레이아웃을 자동으로 `_layouts/post.html`을 사용하게 하기 위해 `_config.yml`에 아래를 추가했습니다. 이제 게시글마다 `layout: post`를 입력하지 않아도 됩니다.
 

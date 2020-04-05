@@ -7,8 +7,11 @@ tags: [github, jekyll, html, meta, feed, sitemap, seo]
 ---
 
 검색엔진 최적화(SEO; Search Engine Optimization)는 말 그대로 사이트를 구글, 네이버와 같은 검색엔진에서 검색이 더 잘되게 하는 것을 말합니다.
+
 Jekyll과 GitHub Pages로 블로그를 만들면 개발자가 직접 검색엔진에 등록해야 검색엔진이 사이트를 보여줄 수 있습니다.
+
 이 글에서는 Jekyll로 만든 블로그를 검색엔진에 등록하고 검색엔진 최적화를 하는 방법을 소개합니다.
+
 Jekyll로 블로그 자체를 만드는 방법에 대해서는 [Jekyll로 나만의 블로그 만들기](https://int-i.github.io/web/2020-03-10/build-blog-with-jekyll/)를 참고하세요.
 
 ## HTML
@@ -42,6 +45,7 @@ Jekyll로 블로그 자체를 만드는 방법에 대해서는 [Jekyll로 나만
 참고: [검색엔진 최적화(SEO) 초보자 가이드](https://support.google.com/webmasters/answer/7451184)
 
 그 다음은 [OG 태그](https://ogp.me/)를 설정해야 합니다.
+
 OG 태그는 페이스북에서 만든 개념으로 웹 페이지에 대한 간단한 정보를 제공하며 검색엔진이나 앱에서 페이지 내용 미리보기 등을 표시하는데 사용합니다.
 
 <figure>
@@ -60,9 +64,11 @@ OG 태그는 페이스북에서 만든 개념으로 웹 페이지에 대한 간�
 ```
 
 OG 태그는 페이스북, 네이버 블로그, 카카오톡 등 다양한 플랫폼에서 인식합니다.
+
 한편, 트위터에서는 OG태그의 정보를 더할 자체적인 메타 데이터 표기법도 가지고 있습니다.
 
 [트위터 카드](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)라고 불리는 이 태그는 트위터 내에서 웹 사이트 정보를 표시하는데 사용됩니다.
+
 트위터 카드 종류 중 [Summary Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image)는 제목, 요약, 이미지(썸네일)를 보여줄 수 있는 태그로 아래와 같이 사용합니다.
 
 ```html
@@ -119,6 +125,7 @@ OG 태그는 페이스북, 네이버 블로그, 카카오톡 등 다양한 플�
 ## Atom
 
 RSS는 Rich Site Summary의 약자로 사이트의 정보를 외부로 전달하기 위한 기술입니다.
+
 아톰(Atom) 피드는 RSS를 확장한 개념으로 Jekyll에서는 [jekyll-feed](https://github.com/jekyll/jekyll-feed) 플러그인을 이용해 쉽게 아톰 피드를 생성할 수 있습니다.
 
 먼저, `_config.yml`에 `jekyll-feed` 플러그인를 추가합니다.

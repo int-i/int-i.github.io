@@ -218,7 +218,7 @@ void array_fn2(int array[]) {
 
 > C++ Core Guidelines에서는 함수의 매개변수로의 포인터 사용을 지양합니다. 배열 포인터를 사용하면 함수의 매개변수로 배열이 들어갈 때 함수 안에서 배열의 크기를 알 수 없습니다. 따라서 `std::span`을 이용해 배열을 넘기거나 `std::array`로 정의된 배열을 사용하는 것이 바람직합니다.
 >
-> 참고: [C++ Array to Pointer Decay](https://blog.seulgi.kim/2017/10/cpp-array-to-pointer-decay.html)
+> 참고: [C/C++ Array Decay](https://int-i.github.io/cpp/2020-04-12/array-deacy/)
 
 2차원 배열은 배열 안에 배열을 넣는 형태로 구현합니다.
 

@@ -18,7 +18,7 @@ tags: [python, syntax]
 
 <figure>
   <img src="/assets/posts/2020-05-29-python-walrus-operator/walrus.jpg" alt="Walrus" style="max-width: 256px;">
-  <figcaption>`:=`가 바다코끼리의 눈과 엄니를 닮아 바다코끼리 연산자라고 불리게 되었다.</figcaption>
+  <figcaption><code>:=</code>가 바다코끼리의 눈과 엄니를 닮아 바다코끼리 연산자라고 불리게 되었다.</figcaption>
 </figure>
 
 바다코끼리 연산자의 목적은 표현식(Expression)에 **이름을 부여**하고 **재사용**할 수 있게 하는 것이다.

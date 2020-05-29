@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="container">
+  <h1 class="title">Categories</h1>
+  <br>
+  {% assign sorted_categories = site.categories | sort %}
+  {% for category in sorted_categories %}
+    <section>
+      {% assign category_name = category | first %}
+      {% assign category_posts = category | last %}
+      <h2 id="{{ category_name }}" class="box__title">#{{ category_name }}</h2>
+      <ul class="list">
+        {% for post in category_posts %}
+          <li class="vertical-item">
+            <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

@@ -20,9 +20,9 @@ CLion은 기본적으로 유료 프로그램(30일 무료 체험판 제공)이�
 
 CLion은 [이곳](https://www.jetbrains.com/ko-kr/clion/)에서 다운로드 할 수 있다.
 
-![CLion Install Options Screenshot](/assets/posts/2020-07-2020-07-04-clion-mingw/clion_install_option.png)
+![CLion Install Options Screenshot](/assets/posts/2020-07-04-clion-mingw/clion_install_option.png)
 
-프로그램을 설치하다 보면 위와 같이 추가적으로 옵션을 설치할지 물어보는데 사용하지 않을거라면 Disable을 눌러주면 된다.
+프로그램을 설치하다 보면 위와 같이 추가로 옵션을 설치할지 물어보는 데 사용하지 않을 거라면 Disable을 눌러주면 된다.
 
 ## Toolchain
 
@@ -47,14 +47,14 @@ CLion은 Visual Studio와 다르게 컴파일러를 설치해주지 않는다.
 
 ### Toolchain 설정
 
-Mingw-w64 설치가 끝났다면 CLion을 실행시켜 `Configure > Settings > Build,Exception,Deployment > Toolchains`으로 가 `+`을 눌러 `MinGW`을 선택해 추가한다.
+Mingw-w64 설치가 끝났다면 CLion을 실행 시켜 `Configure > Settings > Build,Exception,Deployment > Toolchains`로 가 `+`을 눌러 `MinGW`을 선택해 추가한다.
 
 Environment에 Mingw-w64를 설치한 경로를 입력해준다.
 기본 경로는 `C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64`이다.
 
 ![CLion Toolchain Screenshot](/assets/posts/2020-07-04-clion-mingw/clion_toolchain.png)
 
-성공적으로 툴체인을 인식했다면, 위와 같이 초록색 체크표시와 Compiler가 Detected 되었다고 뜬다.
+성공적으로 툴체인을 인식했다면, 위와 같이 초록색 체크 표시와 Compiler가 Detected 되었다고 뜬다.
 
 이제 C++ 프로그램을 컴파일할 환경 설정이 끝났다.
 
@@ -73,7 +73,7 @@ CLion에서 기본적으로 제공하는 코드 정렬 규칙이 있지만, 난 
 > 내가 사용하는 규칙은 [Rust-like Clang-Format Style](https://gist.github.com/Astro36/ef933be73050b4d5a6e0522536723a18)에서 다운받을 수 있다.
 
 규칙을 수정하려면 프로젝트 폴더의 `.clang-format` 파일을 수정해서 저장하면 된다.
-만약 `.clang-format` 파일이 안보인다면, 그냥 `.clang-format`을 새로 만들어 저장하면 된다.
+만약 `.clang-format` 파일이 안 보인다면, 그냥 `.clang-format`을 새로 만들어 저장하면 된다.
 
 > 직접 코드 정렬 규칙을 설정하고 싶다면 [Clang-Format Style Options](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)를 참고하자.
 
@@ -84,13 +84,13 @@ Code Analysis는 코드에서 메모리 누수, 불필요한 로직, 버그 발�
 CLion을 설치하면 자동으로 [Clang-Tidy](https://clang.llvm.org/extra/clang-tidy/)가 설치된다.
 
 Clang-Tidy는 별도의 세팅이 없이 사용하면 된다.
-잠재적으로 문제가 있는 코드를 오른쪽 스크롤바에 노란색 네모로 표시된다.
+잠재적으로 문제가 있는 코드를 오른쪽 스크롤 바에 노란색 네모로 표시된다.
 
 ### Cppcheck
 
 Cppcheck 역시 Clang-Tidy와 같은 Code Analysis 도구이다.
 
-Clang-Tidy에 비해 메모리 누수/침범 가능한 지점을 빡세게 잡아주므로, Clang-Tidy와 함께 사용하는 것을 추천한다. (상호보완적인 성격)
+Clang-Tidy보다 메모리 누수/침범 가능한 지점을 빡세게 잡아주므로, Clang-Tidy와 함께 사용하는 것을 추천한다. (상호보완적인 성격)
 
 ![Cppcheck Install Page Screenshot](/assets/posts/2020-07-04-clion-mingw/cppcheck_install.png)
 
@@ -105,7 +105,14 @@ Cppcheck 설치가 완료되면, CLion에서 Cppcheck 플러그인을 설치한�
 마지막으로 위와 같이 Cppcheck Path에 Cppcheck을 설치한 경로를 입력해준다.
 기본 경로는 `C:\Program Files\Cppcheck\cppcheck.exe`이다.
 
-Cppcheck가 잘 작동하는지 확인하려면 아래와 같이 고의적으로 메모리 누수가 발생하는 코드를 작성하면 된다.
+Cppcheck가 잘 작동하는지 확인하려면 아래와 같이 고의로 메모리 누수가 발생하는 코드를 작성하면 된다.
+
+```cpp
+int main() {
+    int* p = new int;
+    return 0;
+}
+```
 
 ![CLion Cppcheck Plugin Warn Screenshot](/assets/posts/2020-07-04-clion-mingw/clion_cppcheck_warn.png)
 

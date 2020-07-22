@@ -8,7 +8,7 @@ tags: [c, cpp, development_environment, vcpkg, boost]
 
 [Vcpkg](https://github.com/Microsoft/vcpkg)는 Microsoft에서 만든 **C++ 패키지 관리자 프로그램**으로 복잡한 C++ 라이브러리 설치를 간소화하는 명령 줄 프로그램이다.
 
-[Boost]()는 
+[Boost](https://www.boost.org/)는 C++ 기반의 라이브러리 집합으로 STL의 부족한 부분을 보완하는데 주로 사용된다.
 
 ## Vcpkg 설치
 

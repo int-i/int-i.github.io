@@ -127,7 +127,14 @@ Vcpkg를 `C:\vcpkg`가 아닌 다른 곳에 설치했다면 `<Vcpkg 설치 경�
 
 Vcpkg로 Boost가 잘 설치되었는지 확인해보자.
 
-아래 코드를 CLion으로 실행 시켜보자.
+CLion으로 빈 C++ 프로젝트를 생성하고 `CMakeLists.txt`에 아래 코드를 추가하자.
+
+```txt
+find_package(Boost 1.73 REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+```
+
+그리고 `main.cpp`에서 아래 코드를 실행 시켜보자.
 
 ```cpp
 #include <algorithm>

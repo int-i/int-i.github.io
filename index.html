@@ -29,7 +29,10 @@ layout: default
       <span class="pagination__item pagination__item--disabled">&laquo; Prev</span>
       {% endif %}
 
-      {% for page in (1..paginator.total_pages) %}
+      {% assign page_start = paginator.page | minus: 2 | at_least: 1 %}
+      {% assign page_end = page_start | plus: 4 | at_most: paginator.total_pages %}
+
+      {% for page in (page_start..page_end) %}
         {% if page == paginator.page %}
         <span class="pagination__item pagination__item--active">{{ page }}</span>
         {% elsif page == 1 %}

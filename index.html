@@ -33,7 +33,7 @@ layout: default
         {% if page == paginator.page %}
         <span class="pagination__item pagination__item--active">{{ page }}</span>
         {% elsif page == 1 %}
-        <a class="pagination__item pagination__item--enabled" href="{{ paginator.previous_page_path | relative_url }}">{{ page }}</a>
+        <a class="pagination__item pagination__item--enabled" href="{{ '/' | relative_url }}">{{ page }}</a>
         {% else %}
         <a class="pagination__item pagination__item--enabled" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
         {% endif %}

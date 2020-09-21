@@ -85,14 +85,22 @@ find_package(Boost 1.66 REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})
 ```
 
-그리고 CMake에서 `-DBoost_INCLUDE_DIR` 옵션으로 **직접 헤더 파일 경로를 입력**해줘야 합니다.
+~~그리고 CMake에서 `-DBoost_INCLUDE_DIR` 옵션으로 **직접 헤더 파일 경로를 입력**해줘야 합니다.~~
 
-헤더 파일은 `$BOOST_ROOT_1_72_0/include`에 있습니다.
+~~헤더 파일은 `$BOOST_ROOT_1_72_0/include`에 있습니다.~~
+
+(2020년 9월 21일 수정)
+
+아래와 같이 `BOOST_ROOT` 환경변수를 만들어줘도 됩니다.
+
+이때, `set-env`로 환경변수를 정의하는 작업과 CMake를 실행해 코드를 빌드하는 작업이 **서로 다른 step으로 분리**되어 있어야 합니다.
 
 ```yml
+- name: Setup Boost environment variable
+  run: echo "::set-env name=BOOST_ROOT::$BOOST_ROOT_1_72_0"
 - name: Run CMake
   run: |
-      cmake -S . -B build -DBoost_INCLUDE_DIR=$BOOST_ROOT_1_72_0/include
+      cmake -S . -B build
       cmake --build build -j 2
 ```
 

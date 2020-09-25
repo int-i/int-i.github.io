@@ -55,6 +55,18 @@ Further information:
      http://www.boost.org/build/
 ```
 
+> Boost.Python을 같이 설치하려면 `--with-python` 옵션을 전달해야 합니다:
+>
+> ```txt
+> $ ./bootstrap.sh --with-python=python3
+> ```
+>
+> `fatal error: pyconfig.h: No such file or directory` 오류는 파이선 헤더를 설치하면 해결됩니다.
+>
+> ```txt
+> $ sudo apt install python3-dev
+> ```
+
 빌드를 위한 설정 파일을 만들어주는 과정입니다.
 
 ```txt

@@ -12,6 +12,10 @@
   font-size: 1.2rem;
 }
 
+.card__content {
+  word-break: break-all;
+}
+
 .card__metadata {
   color: rgba($on-surface-color, 0.38);
 }

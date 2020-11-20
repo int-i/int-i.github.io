@@ -1,6 +1,8 @@
 <head>
   {% if page.title %}
     {% capture title %}{{ page.title }} - {{ site.title }}{% endcapture %}
+  {% elsif paginator.page != 1 %}
+    {% capture title %}{{ site.title }}({{ paginator.page }} 페이지){% endcapture %}
   {% else %}
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}

@@ -16,7 +16,7 @@ layout: default
         {% endfor %}
       </ul>
       <div class="content card__metadata">
-        <time datetime="{{ post.date }}">{{ post.date | date_to_string }}</time> · by {{ site.data.authors[post.author].name }}
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time> · by {{ site.data.authors[post.author].name }}
       </div>
     </article>
     {% endfor %}

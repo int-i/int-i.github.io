@@ -7,7 +7,7 @@ layout: default
     <header class="post__header">
       <h1 class="title">{{ page.title | escape }}</h1>
       <div class="content">
-        <time datetime="{{ page.date }}">{{ page.date | date_to_string }}</time> · by {{ site.data.authors[page.author].name }}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by {{ site.data.authors[page.author].name }}
       </div>
     </header>
 

@@ -1,0 +1,47 @@
+- id: ACE1313
+  name: 객체지향프로그래밍1
+  professor: 최학남
+  semester: 2019년 1학기
+  link: https://github.com/int-i/ACE1313/blob/master/psj/README.md
+
+- id: ACE1309
+  name: 객체지향프로그래밍2
+  professor: 박인규
+  semester: 2019년 2학기
+  link: https://github.com/int-i/ACE1309/blob/master/a01/README.md
+
+- id: ACE1309
+  name: 객체지향프로그래밍2
+  professor: 최학남
+  semester: 2019년 2학기
+  link: https://github.com/int-i/ACE1309/blob/master/psj/README.md
+
+- id: ICE2004
+  name: 자료구조론
+  professor: 최원익
+  semester: 2020년 1학기
+  link: https://github.com/int-i/ICE2004/blob/master/psj/README.md
+
+- id: ICE2004
+  name: 자료구조론
+  professor: 최학남
+  semester: 2020년 1학기
+  link: https://github.com/int-i/ICE2004/blob/master/a01/README.md
+
+- id: ICE3003
+  name: 수치해석
+  professor: 이승걸
+  semester: 2020년 2학기
+  link: https://github.com/int-i/ICE3003/blob/master/psj/README.md
+
+- id: ICE3013
+  name: 시스템프로그래밍
+  professor: 김기창
+  semester: 2020년 1학기
+  link: https://github.com/int-i/ICE3013/blob/master/psj/README.md
+
+- id: ICE3014
+  name: 오퍼레이팅시스템
+  professor: 김기창
+  semester: 2020년 2학기
+  link: https://github.com/int-i/ICE3014/blob/master/psj/README.md

@@ -3,6 +3,7 @@
   height: 50vh;
   background: center/cover no-repeat url('/assets/posts/2020-01-27-welcome/inti_hackathon.jpg') ;
   border-bottom: 1px rgba($on-surface-color, 0.12) solid;
+  text-align: center;
 }
 
 .hero__scrim {
@@ -15,6 +16,7 @@
   bottom: -1px;
   left: 0;
   right: 0;
+  padding: 2rem;
   background-color: rgba($surface-color, 0.38);
   backdrop-filter: blur(5px);
 }
@@ -36,7 +38,7 @@
 }
 
 .hero__button {
-  margin: 1rem 0;
+  margin: 1rem 0 0;
   padding: 0.5rem 1rem;
   color: rgba($on-surface-color, 0.87);
   font-size: 1.2rem;

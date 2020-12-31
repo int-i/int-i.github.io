@@ -9,6 +9,7 @@
   display: inline;
   font-weight: normal;
   color: $primary-color;
+  word-break: keep-all;
 }
 
 .hashtag::before {

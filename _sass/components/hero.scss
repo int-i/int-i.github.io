@@ -1,0 +1,51 @@
+.hero {
+  position: relative;
+  height: 50vh;
+  background: center/cover no-repeat url('/assets/posts/2020-01-27-welcome/inti_hackathon.jpg') ;
+  border-bottom: 1px rgba($on-surface-color, 0.12) solid;
+}
+
+.hero__scrim {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  background-color: rgba($surface-color, 0.38);
+  backdrop-filter: blur(5px);
+}
+
+.hero__title {
+  margin: 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $on-surface-color;
+  text-decoration: none;
+}
+
+.hero__subtitle {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: rgba($on-surface-color, 0.87);
+  text-decoration: none;
+}
+
+.hero__button {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  color: rgba($on-surface-color, 0.87);
+  font-size: 1.2rem;
+  border: 1px rgba($on-surface-color, 0.38) solid;
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+
+
+.hero__button:hover {
+  background-color: rgba($on-surface-color, 0.05);
+}

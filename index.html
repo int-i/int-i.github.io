@@ -2,6 +2,16 @@
 layout: default
 ---
 
+{% if paginator.page == 1 %}
+<section class="hero">
+  <div class="hero__scrim">
+    <h1 class="hero__title">인트아이 스터디 블로그</h1>
+    <h2 class="hero__subtitle">인하대학교 정보통신공학과 프로그래밍 소모임</h2>
+    <a class="hero__button" href="https://github.com/int-i">GitHub</a>
+  </div>
+</section>
+{% endif %}
+
 <div class="container grid grid--weighted-double-stage">
   <section>
     {% for post in paginator.posts %}

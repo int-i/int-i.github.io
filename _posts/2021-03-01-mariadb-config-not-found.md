@@ -3,7 +3,7 @@ title: "Python: OSError: mariadb_config not found."
 date: 2021-03-01
 author: Astro36
 category: python
-tags: [python, pip, mariadb, database]
+tags: [python, pypi, mariadb, database]
 ---
 
 ```txt

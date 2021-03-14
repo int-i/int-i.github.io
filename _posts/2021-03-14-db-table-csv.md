@@ -6,6 +6,10 @@ category: sql
 tags: [sql, mysql, mariadb, database, export, import]
 ---
 
+MySQL/MariaDB를 사용하다 보면 DB 테이블의 데이터를 따로 뽑아서 보관해야 될 일이 있을 것이다.
+
+이 경우 주로 [mysqldump](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)를 이용해 테이블을 저장하지만, 이번에는 SQL 코드를 이용해 테이블을 [CSV](https://ko.m.wikipedia.org/wiki/CSV_(파일_형식)) 파일로 저장하는 방법을 소개해보도록 하겠다.
+
 ## DB -> CSV
 
 DB 테이블에 저장된 데이터를 CSV로 변환에 출력하는 SQL 코드이다.

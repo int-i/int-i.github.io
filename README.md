@@ -44,6 +44,8 @@ tags: [tag1, tag2, tag3] # 태그 (띄어쓰기 X, 영어로)
 ---
 ```
 
+> Front Matter의 `---`는 지우면 안 됨
+
 Front Matter 아래에 [Markdown](https://guides.github.com/features/mastering-markdown/)으로 본문 작성
 
 본문에는 `#`(=`<h1>`) 태그는 사용 불가

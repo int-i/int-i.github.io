@@ -10,7 +10,7 @@ tags: [c, cpp, cmake, meson, subprojects, gcc, git, submodule, subtree]
 
 이번에는 Meson의 심화 과정으로 **서브프로젝트(Subproject) 기능**을 이용해 **외부 라이브러리를 가져오는 방법**을 알려드리겠습니다.
 
-우선 Meson의 서브 프로젝트 기능을 소개하기 전에 기존에 방식을 알아보겠습니다.
+우선 Meson의 서브 프로젝트 기능을 소개하기 전에 기존의 방식을 알아보겠습니다.
 
 오늘날 대다수의 C++ 프로젝트는 **CMake를 이용**해 코드를 관리하는데, CMake에서는 주로 [`add_subdirectory`](https://cmake.org/cmake/help/latest/command/add_subdirectory.html)로 [Git Submodule](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%EC%84%9C%EB%B8%8C%EB%AA%A8%EB%93%88)을 통해 가져온 라이브러리를 불러옵니다.
 
@@ -22,11 +22,11 @@ tags: [c, cpp, cmake, meson, subprojects, gcc, git, submodule, subtree]
 
 Meson은 CMake 보다 **문법이 간결**할 뿐더러 CMake 못지 않은 **여러 기능을 지원**하기 때문에 새로운 프로젝트를 시작하실 예정이라면 한 번 찍어먹어 보시기엔 충분합니다.
 
-서브프로젝트를 통해 가져올 수 있는 C++ 라이브러리의 상태는 크게 3가지로 나눌 수 있습니다.
+서브프로젝트를 통해 가져올 수 있는 **C++ 라이브러리의 상태**는 크게 3가지로 나눌 수 있습니다.
 
-1. 가져올 라이브러리가 Meson Wrap DB에 업로드 되어 있는 경우
-2. 가져올 라이브러리가 Meson 빌드 파일(`meson.build`)을 포함하고 있는 경우
-3. 가져올 라이브러리가 Meson 이외 빌드 시스템의 빌드 파일(`CMakeLists.txt` 등)을 포함하고 있는 경우
+1. 가져올 라이브러리가 **Meson Wrap DB에 업로드** 되어 있는 경우
+2. 가져올 라이브러리가 **Meson 빌드 파일(`meson.build`)**을 포함하고 있는 경우
+3. 가져올 라이브러리가 **Meson 이외 빌드 시스템**의 빌드 파일(`CMakeLists.txt` 등)을 포함하고 있는 경우
 
 ---
 
@@ -53,7 +53,7 @@ gtest_dep = doctest_proj.get_variable('gtest_dep')
 
 다만, 한 가지 단점은 아직 Wrap에 많은 **패키지가 등록되어 있지 않다**는 것입니다.
 
-따라서 직접 Git을 통해 라이브러리를 가져오는 방법 또한 필요합니다.
+따라서 직접 **Git을 통해** 라이브러리를 가져오는 방법 또한 필요합니다.
 
 참고: [Meson - WrapDB packages](https://mesonbuild.com/Wrapdb-projects.html)
 
@@ -81,7 +81,7 @@ doctest_dep = doctest_proj.get_variable('doctest_dep')
 
 참고: [Meson - Wrap dependency system manual](https://mesonbuild.com/Wrap-dependency-system-manual.html)
 
-만약 라이브러가 Git을 이용하고 있지 않다면, `[wrap-file]`을 이용하면 됩니다.
+만약 라이브러가 **Git을 이용하고 있지 않다**면, `[wrap-file]`을 이용하면 됩니다.
 
 1번과의 차이점은 **직접 `.wrap` 파일을 작성**해야 한다는 것입니다.
 

@@ -46,7 +46,7 @@ Installed gtest branch 1.10.0 revision 1
 
 ```txt
 gtest_proj = subproject('gtest')
-gtest_dep = doctest_proj.get_variable('gtest_dep')
+gtest_dep = gtest_proj.get_variable('gtest_dep')
 ```
 
 > Meson의 서브프로젝트는 `subprojects` 디렉토리를 이용합니다.

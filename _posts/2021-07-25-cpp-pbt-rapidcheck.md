@@ -187,6 +187,8 @@ int main() {
 
 참고: [RapidCheck - User Guide](https://github.com/emil-e/rapidcheck/blob/master/doc/user_guide.md)
 
+참고: [이 글에서 사용된 코드](https://github.com/int-i/cpp-pbt-example)
+
 ## 결론
 
 여기까지 속성 기반 테스팅의 소개와 RapidCheck를 통해 테스트를 작성하는 방법을 알아봤습니다.

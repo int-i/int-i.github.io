@@ -4,6 +4,7 @@ date: 2021-07-25
 author: Astro36
 category: cpp
 tags: [c, cpp, cmake, testing, pbt, property_based_testing, rapidcheck]
+thumbnail: /assets/posts/2021-07-25-cpp-pbt-rapidcheck/thumbnail.jpg
 ---
 
 > PBT; Property-based Testing(속성 기반 테스팅)

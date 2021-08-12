@@ -12,6 +12,14 @@
   font-size: 1.2rem;
 }
 
+.card__image {
+  display: block;
+  width: 100%;
+  max-height: 50vh;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
 .card__content {
   word-break: break-all;
 }

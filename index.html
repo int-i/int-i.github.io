@@ -18,7 +18,7 @@ layout: default
     <article class="card">
       <a class="no-text-decoration" href="{{ post.url | relative_url }}">
         {% if post.thumbnail %}
-        <img class="card__image" alt="Post thumbnail" src="{{ post.thumbnail }}">
+        <img class="card__image" alt="Post thumbnail" src="{{ post.thumbnail | relative_url }}">
         {% endif %}
         <header class="title card__title">{{ post.title | escape }}</header>
         <div class="content card__content">{{ post.excerpt | strip_html | truncate: 150 }}</div>

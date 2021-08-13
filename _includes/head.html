@@ -20,7 +20,7 @@
   {% endif %}
 
   {% if page.thumbnail %}
-    {% capture thumbnail %}{{ post.thumbnail | relative_url }}{% endcapture %}
+    {% capture thumbnail %}{{ page.thumbnail | relative_url }}{% endcapture %}
   {% else %}
     {% capture thumbnail %}{{ "/assets/img/icon512.png" | relative_url }}{% endcapture %}
   {% endif %}

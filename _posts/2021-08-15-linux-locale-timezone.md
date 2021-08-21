@@ -1,5 +1,5 @@
 ---
-title: "Debian과 Ubuntu에서 Fun하고 Cool하고 Sexy하게 Locale과 Timezone 설정하기"
+title: "Debian과 Ubuntu에서 펀쿨섹하게 Locale과 Timezone 설정하기"
 date: 2021-08-15
 author: Astro36
 category: linux

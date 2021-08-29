@@ -36,6 +36,8 @@ services:
       TZ: Asia/Seoul
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
     networks:
       - backend
     ports:
@@ -61,6 +63,16 @@ volumes:
 `image: postgres:13-alpine`은 PostgreSQL 이미지를 설정하는 부분입니다.
 
 `-alpine` 이미지는 Debian 기반의 이미지(110MB)보다 용량이 작기(70MB) 때문에 호스트의 **저장용량 부담**을 줄이기 위해 선택했습니다.
+
+`healthcheck`는 `pg_isready`를 이용해 해당 데이터베이스가 사용가능한 지 확인합니다.
+
+상태를 확인하는 주기의 기본값은 30초입니다.
+
+참고: [Docker - HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck)
+
+> `pg_isready`에 `-U` 옵션으로 사용자를 지정하지 않으면, `FATAL: role "root" does not exist` 오류가 발생합니다.
+>
+> 참고: [PostgreSQL - pg_isready](https://www.postgresql.org/docs/current/app-pg-isready.html)
 
 `restart: unless-stopped`를 통해 오류로 인해 **DB가 강제종료**되면, DB를 **재시작** 합니다.
 

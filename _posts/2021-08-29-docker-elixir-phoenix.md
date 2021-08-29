@@ -1,9 +1,9 @@
 ---
 title: "Docker로 Elixir Phoenix 앱 배포"
-date: 2021-08-14
+date: 2021-08-29
 author: Astro36
 category: elixir
-tags: [elixir, phoenix, docker, alpine]
+tags: [elixir, phoenix, mix, docker, alpine]
 thumbnail: /assets/posts/2021-08-29-docker-elixir-phoenix/thumbnail.jpg
 ---
 
@@ -50,9 +50,9 @@ COPY mix.exs mix.lock ./
 RUN mix do deps.get, deps.compile
 ```
 
-의존성 파일을 복사하고, 의존성을 가져와 컴파일합니다.
+**의존성 파일**을 복사하고, 의존성을 가져와 컴파일합니다.
 
-만약 애셋(assets) 파일이 존재한다면 의존성을 가져온 이후에, 애셋 파일을 빌드합니다. (레이어 캐시를 활용하기 위해)
+만약 애셋(assets) 파일이 존재한다면 의존성을 가져온 이후에, **애셋 파일을 빌드**합니다. (레이어 캐시를 활용하기 위해)
 
 ```txt
 COPY assets assets
@@ -61,7 +61,7 @@ RUN npm ... && \
     mix phx.digest
 ```
 
-`mix phx.digest`는 정적 파일을 압축하는 명령입니다.
+`mix phx.digest`는 **정적 파일을 압축**하는 명령입니다.
 
 참고: [Phoenix - mix phx.digest](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.Digest.html)
 
@@ -73,7 +73,7 @@ RUN mix do compile, release
 
 나머지 파일을 복사하고 컴파일 후 릴리즈를 생성합니다.
 
-여기서 바로 bin/app start를 해도 되지만, Mutli-stage 빌드를 이용하면 더 **작은 용량**으로 Dockerfile을 최적화할 수 있습니다.
+여기서 바로 bin/app start를 해도 되지만, 도커의 **Mutli-stage 빌드**를 이용하면 더 **작은 용량**으로 Dockerfile을 최적화할 수 있습니다.
 
 참고: [Docker Multi-stage build](https://docs.docker.com/develop/develop-images/multistage-build/)
 

@@ -4,6 +4,7 @@ date: 2021-09-05
 author: Astro36
 category: github
 tags: [github, badge, markdown, readme, shields.io, logo, image, svg]
+thumbnail: /assets/posts/2021-09-05-shields-io-svg-logo/thumbnail.jpg
 ---
 
 [Shields.io](https://shields.io/)는 GitHub Readme에서 사용할 수 있는 **여러 Badge를 제공**해주는 서비스입니다.

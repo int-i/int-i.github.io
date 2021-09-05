@@ -34,7 +34,7 @@ Simple Icons 사이트에 존재하지 않는 [Tokio](https://tokio.rs/) 로고�
 
 [GitHub tokio-rs/website/tokio.svg](https://github.com/tokio-rs/website/blob/master/public/img/icons/tokio.svg)
 
-SVG 파일을 구했다면, Base64로 인코딩 했을 때의 길이를 줄이기 위해 *이미지를 압축**합니다.
+SVG 파일을 구했다면, Base64로 인코딩 했을 때의 길이를 줄이기 위해 **이미지를 압축**합니다.
 
 SVG 파일의 압축은 [SVGOMG](https://jakearchibald.github.io/svgomg/)를 이용하면 편하게 할 수 있습니다.
 

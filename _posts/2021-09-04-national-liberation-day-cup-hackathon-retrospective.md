@@ -4,6 +4,7 @@ date: 2021-09-04
 author: yt4307
 category: retrospective
 tags: [hackathon, retrospective]
+thumbnail: /assets/posts/2021-09-04-national-liberation-day-cup-hackathon-retrospective/recruitment-poster.png
 ---
 
 | 2021 인트아이 광복절 배 해커톤	|

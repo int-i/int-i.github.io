@@ -64,6 +64,6 @@ Processing triggers for man-db (2.9.1-1) ...
 **Alpine Linux**의 경우 `postgresql-dev`를 설치하면 됩니다.
 
 ```txt
-$ RUN apk add --no-cache postgresql-dev
+RUN apk add --no-cache postgresql-dev
 ```
 

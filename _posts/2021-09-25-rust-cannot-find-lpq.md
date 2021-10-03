@@ -3,7 +3,7 @@ title: "Rust: /usr/bin/ld: cannot find -lpq"
 date: 2021-09-25
 author: Astro36
 category: rust
-tags: [rust, postgres, linux, ubuntu]
+tags: [rust, postgres, linux, ubuntu, alpine, docker]
 thumbnail: /assets/posts/2021-09-25-rust-cannot-find-lpq/thumbnail.jpg
 ---
 
@@ -58,3 +58,12 @@ Setting up libpq-dev (12.8-0ubuntu0.20.04.1) ...
 Processing triggers for libc-bin (2.31-0ubuntu9.2) ...
 Processing triggers for man-db (2.9.1-1) ...
 ```
+
+## for Docker
+
+**Alpine Linux**의 경우 `postgresql-dev`를 설치하면 됩니다.
+
+```txt
+$ RUN apk add --no-cache postgresql-dev
+```
+

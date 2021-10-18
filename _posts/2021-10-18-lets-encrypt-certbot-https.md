@@ -2,7 +2,7 @@
 title: "듣고있나요 나의 이 모든 패킷을: certbot과 함께하는 HTTPS 적용 (Feat. HAProxy)"
 date: 2021-10-18
 author: Astro36
-category: rust
+category: web
 tags: [linux, lets_encrypt, certbot, https, hsts, haproxy]
 thumbnail: /assets/posts/2021-10-18-lets-encrypt-certbot-https/thumbnail.jpg
 ---

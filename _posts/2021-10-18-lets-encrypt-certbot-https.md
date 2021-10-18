@@ -4,7 +4,7 @@ date: 2021-10-18
 author: Astro36
 category: rust
 tags: [linux, lets_encrypt, certbot, https, hsts, haproxy]
-thumbnail: /assets/posts/2021-10-18-lets-encrypt-certbot-https.md/thumbnail.jpg
+thumbnail: /assets/posts/2021-10-18-lets-encrypt-certbot-https/thumbnail.jpg
 ---
 
 웹 사이트에서 HTTPS를 사용하려면 **CA(인증 기관)에서 가져온 인증서**가 필요합니다.

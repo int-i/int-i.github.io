@@ -11,7 +11,7 @@ thumbnail: /assets/posts/2021-10-24-cpp-iterator-sorting/thumbnail.jpg
 
 정렬 알고리즘에는 다양한 종류가 있지만, 그중 몇 가지만 **C++20 반복자**를 이용해 구현해 볼 것이다.
 
-반복자(Iterator)란 배열이나 리스트 등의 자료 구조에서 내부의 요소를 순회하는 객체이다.
+여기서 반복자(Iterator)란 배열이나 리스트 등의 자료 구조에서 **내부의 요소를 순회**하는 객체이다.
 
 참고: [[C++] 반복자 (Iterator)](https://eehoeskrap.tistory.com/m/263)
 
@@ -116,6 +116,8 @@ namespace sort {
 ## 버블 정렬
 
 ![버블 정렬](https://upload.wikimedia.org/wikipedia/commons/3/37/Bubble_sort_animation.gif)
+
+> 출처: 위키백과
 
 버블 정렬(Bubble Sort)은 **인접한 두 원소를 비교**하며 정렬하는 알고리즘으로, 원소의 이동이 **거품이 수면으로 올라오는 듯한 모습**을 보이기 때문에 지어진 이름이다.
 

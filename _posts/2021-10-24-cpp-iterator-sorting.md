@@ -128,9 +128,9 @@ namespace sort {
              typename Compare = std::less<>>
     void bubble_sort(I first, S last, Compare cmp = Compare{}) {
         for (auto i = first; i < last; ++i) {
-            for (auto j = i + 1; j < last; ++j) {
-                if (cmp(*j, *i)) {
-                    std::iter_swap(i, j);
+            for (auto j = first + 1; j < last - (i - first); ++j) {
+                if (cmp(*j, *(j - 1))) {
+                    std::iter_swap(j - 1, j);
                 }
             }
         }

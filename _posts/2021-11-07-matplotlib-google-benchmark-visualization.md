@@ -3,7 +3,7 @@ title: "Matplotlib을 이용한 Google Benchmark 결과 시각화"
 date: 2021-11-07
 author: Astro36
 category: python
-tags: [python, pypi, matplotlib, cpp, benchmark, visualization]
+tags: [python, pypi, matplotlib, json, cpp, benchmark, visualization]
 thumbnail: /assets/posts/2021-11-07-matplotlib-google-benchmark-visualization/thumbnail.jpg
 ---
 
@@ -73,7 +73,7 @@ Benchmark 파일을 실행할 때, **환경변수**로 넣어줍니다.
 $ BENCHMARK_FORMAT=json BENCHMARK_OUT=benchmark.json build/benchmarks/benchmark_sort
 ```
 
-실행이 끝나면, 결과는 JSON으로 `benchmark.json`에 출력됩니다.
+실행이 끝나면, 결과는 JSON으로 `benchmark.json`(`BENCHMARK_OUT`)에 출력됩니다.
 
 `benchmark.json`:
 
@@ -82,7 +82,7 @@ $ BENCHMARK_FORMAT=json BENCHMARK_OUT=benchmark.json build/benchmarks/benchmark_
   "context": {
     "date": "2021-11-07T11:54:01+09:00",
     "host_name": "ubuntu",
-    "executable": "rel/benchmarks/benchmark_sort",
+    "executable": "build/benchmarks/benchmark_sort",
     "num_cpus": 4,
     "mhz_per_cpu": 1500,
     "cpu_scaling_enabled": true,
@@ -124,7 +124,7 @@ $ BENCHMARK_FORMAT=json BENCHMARK_OUT=benchmark.json build/benchmarks/benchmark_
 이제 JSON 파일을 읽어봅시다.
 
 ```py
-with open('benchmark.json) as file:
+with open('benchmark.json') as file:
     benchmark_result = json.load(file)
     benchmarks = benchmark_result['benchmarks']
 ```
@@ -151,7 +151,7 @@ elapsed_times = groupby(benchmarks, extract_label_from_benchmark)
 
 이제 반복문을 돌면서, 알고리즘 종류 별로 **배열 크기와 실행 시간을 종합**해 그래프에 그립니다.
 
-Y축(실행 시간)이 너무 커질 경우를 대비해, `math.log`로 실행 시간에 $$ln$$을 취해줍니다.
+Y축(실행 시간)이 너무 커질 경우를 대비해, [`math.log`](https://docs.python.org/ko/3/library/math.html?highlight=log#math.log)로 실행 시간에 $$ln$$을 취해줍니다.
 
 ```py
 for key, group in elapsed_times:

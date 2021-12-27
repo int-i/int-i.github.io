@@ -7,7 +7,7 @@ tags: [rust, async, await, future, trait]
 thumbnail: /assets/posts/2021-12-27-rust-async-future/thumbnail.jpg
 ---
 
-> 비동기(Asynchronous) 프로그래밍: 프로그램 코드가 순차적으로 실행되는 것을 보장하지 않는 프로그래밍 기법
+> 비동기(Asynchronous) 프로그래밍: 프로그램 코드가 순차적으로 실행됨을 보장하지 않음
 
 일반적으로, 프로그램의 코드는 **순차적으로 실행**됩니다.
 
@@ -146,7 +146,7 @@ impl Future for Delay {
 
 `println`과 같은 동기 코드와 함께 `Future`를 사용할 때는 아래와 같이 **`await`를 통해 실행**하면 됩니다.
 
-```
+```rs
 async fn main() {
     let when = Instant::now() + Duration::from_millis(10);
     let delay = Delay { when };

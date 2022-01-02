@@ -1,5 +1,5 @@
 ---
-title: "Rust: 비동기 프로그래밍, 그리고 Future"
+title: "Rust 비동기 프로그래밍: async를 들추고 Future를 살펴보자"
 date: 2021-12-27
 author: Astro36
 category: rust

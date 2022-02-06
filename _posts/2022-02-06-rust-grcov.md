@@ -4,7 +4,7 @@ date: 2022-02-06
 author: Astro36
 category: rust
 tags: [rust, nightly, code_coverage, grcov, lcov, codecov, llvm]
-thumbnail: /assets/posts/2022-01-23-rust-error-anyhow/thumbnail.jpg
+thumbnail: /assets/posts/2022-02-06-rust-grcov/thumbnail.jpg
 ---
 
 [grcov](https://github.com/mozilla/grcov)는 Mozilla 재단에서 FireFox의 코드 검사를 위해 만든 **코드 커버리지 도구**로, `.gcda`, `.profraw` 파일을 분석해 **코드 커버리지 보고서**를 만드는 데에 사용합니다.

@@ -39,10 +39,10 @@ thumbnail: /assets/posts/2022-04-02-summary-of-the-3rd-regular-meetup/thumbnail.
 장소의 경우 4월 18일까지는 하이테크센터 4층 ICE 카페가 열지 않기 때문에 그 전까지는 온라인 디스코드로 진행될 예정이에요.
 
 또한 일정상 나가게 된 분들이 생겨 추가 인원 2명 정도를 추가 모집 중에 있습니다.  
-관심 있으신 분들은 https://forms.gle/rggXGgX9YAYRbzP59 해당 링크를 통해 신청 바랍니다!
+관심 있으신 분들은 [신청 링크](https://forms.gle/rggXGgX9YAYRbzP59) 해당 링크를 통해 신청 바랍니다!
 
 ### 3) 인트아이 공식 홈페이지
-https://forms.gle/d9vzfnmqaJYWBJbb9  
+[신청 링크](https://forms.gle/d9vzfnmqaJYWBJbb9)  
 위의 링크를 통해 짧은 설문지 작성 후 개발 팀을 꾸려 개발을 진행할 예정입니다!
 
 기존에 사용되었던 개발 관련 자료는 모두 제공해드릴 예정이고, 따로 마감일은 없으나 4월 중순쯤에는 팀 구성을 완료하는 것을 목표로 하고 있습니다.

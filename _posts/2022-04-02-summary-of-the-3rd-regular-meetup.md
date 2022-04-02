@@ -27,7 +27,8 @@ thumbnail: /assets/posts/2022-04-02-summary-of-the-3rd-regular-meetup/thumbnail.
 - 참가자 모집 기간: 3.29 ~ 5.1
 - IPC 진행 기간: 5.5 ~ 5.7
 - 참가비: 2,000원(추후 수정 가능성 있음)
-- 신청 방법: 포스터 상단의 QR코드 스캔 후, 구글 폼에서 신청서 작성
+- 신청 방법: [신청 링크](https://forms.gle/UHcN3zFCiQvPYX3L7)를 통해 신청해주시거나,  
+포스터 상단의 QR코드 스캔 후, 구글 폼에서 신청서 작성
 
 인트아이 멤버 여러분들의 많은 참여 바랍니다!
 

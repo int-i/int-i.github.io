@@ -1,5 +1,4 @@
 ---
 ---
-{% for post in site.posts %}
-  {{ post.url | absolute_url }}
+{% for post in site.posts %}{{ post.url | absolute_url }}
 {% endfor %}

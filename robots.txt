@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://int-i.github.io/sitemap.xml

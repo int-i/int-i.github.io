@@ -19,6 +19,7 @@ RSS(Rich Site Summary)는 **뉴스나 블로그**에서 사이트 정보를 **�
 
 `rss.xml`:
 
+{% raw %}
 ```xml
 ---
 ---
@@ -50,9 +51,10 @@ RSS(Rich Site Summary)는 **뉴스나 블로그**에서 사이트 정보를 **�
   </channel>
 </rss>
 ```
+{% endraw %}
 
 `<copyright>`, `<author>` 태그를 본인 **블로그에서 사용하는 형식에 맞춰 수정**해서 적용하면 RSS 2.0 피드가 생성됩니다.
 
 ![Naver SearchAdvisor Screenshot](/assets/posts/2022-04-09-rss-jekyll-blog-seo/searchadvisor.jpg)
 
-그 후, RSS 피드를 **네이버 서치어드바이저에 적용**하면 잘 되는 것을 확인할 수 있습니다.
+그 후, RSS 피드를 **네이버 서치어드바이저에 적용**하면 정상적으러 등록되는 것을 확인할 수 있습니다.

@@ -1,11 +1,12 @@
 ---
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ site.title | xml_escape }}</title>
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url | absolute_url }}</link>
+    <atom:link href="{{ "/rss.xml" | absolute_url }}" rel="self" type="application/rss+xml" />
     <language>ko-KR</language>
     <copyright>Copyright 인하대학교 인트아이, All rights reserved.</copyright>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>

@@ -1,8 +1,16 @@
-@import 'foundations';
 @import 'variables';
+
+html {
+  font-size: 16px;
+
+  @media (max-width: 1023px) {
+    font-size: 14px;
+  }
+}
 
 body {
   background-color: $background-color;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* Position */

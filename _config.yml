@@ -5,10 +5,8 @@ baseurl: ""
 timezone: Asia/Seoul
 permalink: /:categories/:year-:month-:day/:title/
 
-author:
-  name: 인하대학교 인트아이
-  # email: int-i@example.com
-  # tel: 010-1234-5678
+email: iceinti16@gmail.com
+manager: yt4307
 
 defaults:
   - scope:

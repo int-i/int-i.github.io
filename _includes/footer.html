@@ -8,18 +8,18 @@
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
           {{ site.description }}
         </li>
-        {% if site.author.tel %}
+        {% if site.email %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
-          Tel: <a class="link footer__link" href="tel:{{ site.author.tel }}">{{ site.author.tel }}</a>
+          Email: <a class="link footer__link" href="mailto:{{ site.email }}">{{ site.email }}</a>
         </li>
         {% endif %}
-        {% if site.author.email %}
+        {% if site.manager %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
-          Email: <a class="link footer__link" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+          Manager: {{ site.data.authors[site.manager].admission_year | slice: 2, 3 }}{{ site.data.authors[site.manager].name }} <a class="link footer__link" href="mailto:{{ site.data.authors[site.manager].email }}">{{ site.data.authors[site.manager].email }}</a>
         </li>
         {% endif %}
       </ul>
-      Copyright © {{ site.author.name }}, All rights reserved.
+      Copyright © {{ site.title }}, All rights reserved.
     </div>
   </div>
 </footer>

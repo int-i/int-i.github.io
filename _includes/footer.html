@@ -4,10 +4,13 @@
       <a class="title footer__title" href="{{ site.url }}">{{ site.title }}</a>
     </div>
     <div class="content footer__content">
+      {{ site.description }}
       <ul class="list">
+        {% if site.location %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
-          {{ site.description }}
+          <a class="link footer__link" href="https://place.map.kakao.com/17557585">{{ site.location }}</a>
         </li>
+        {% endif %}
         {% if site.email %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
           Email: <a class="link footer__link" href="mailto:{{ site.email }}">{{ site.email }}</a>
@@ -15,7 +18,7 @@
         {% endif %}
         {% if site.manager %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
-          Manager: {{ site.data.authors[site.manager].admission_year | slice: 2, 3 }}{{ site.data.authors[site.manager].name }} <a class="link footer__link" href="mailto:{{ site.data.authors[site.manager].email }}">{{ site.data.authors[site.manager].email }}</a>
+          Manager: {{ site.data.authors[site.manager].admission_year | slice: 2, 3 }}{{ site.data.authors[site.manager].name }} (<a class="link footer__link" href="mailto:{{ site.data.authors[site.manager].email }}">{{ site.data.authors[site.manager].email }}</a>)
         </li>
         {% endif %}
       </ul>

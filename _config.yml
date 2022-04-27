@@ -5,6 +5,7 @@ baseurl: ""
 timezone: Asia/Seoul
 permalink: /:categories/:year-:month-:day/:title/
 
+location: 22212 인천광역시 미추홀구 인하로 100 인하대학교 하이테크센터 고층부 지하1층
 email: iceinti16@gmail.com
 manager: yt4307
 

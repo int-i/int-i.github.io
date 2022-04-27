@@ -3,6 +3,13 @@
   border-bottom: 1px rgba($on-surface-color, 0.12) solid;
 }
 
+.post__image {
+  display: block;
+  width: 100%;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
 .post__content {
   padding: 1rem 0;
 }

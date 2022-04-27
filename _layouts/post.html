@@ -5,6 +5,9 @@ layout: default
 <section class="container">
   <article>
     <header class="post__header">
+      {% if page.thumbnail %}
+      <img class="post__image" alt="Post thumbnail" src="{{ page.thumbnail | relative_url }}">
+      {% endif %}
       <h1 class="title">{{ page.title | escape }}</h1>
       <div class="content">
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by {{ site.data.authors[page.author].name }}

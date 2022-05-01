@@ -3,7 +3,7 @@ title: "냅다 디비를 만들어! 1위부터 5위까지 DB 비교 분석"
 date: 2022-05-01
 author: Astro36
 category: sql
-tags: [sql, database, rdbms, nosql, oracle, postgres, mysql, mariadb, mongodb]
+tags: [sql, database, rdbms, nosql, oracle, mysql, mssql, postgres, mongodb]
 thumbnail: /assets/posts/2022-05-01-db-comparison/thumbnail.jpg
 ---
 

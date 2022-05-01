@@ -1,5 +1,5 @@
 ---
-title: "냅다 디비를 만들어! 1위부터 5위까지 DB 비교 분석"
+title: "냅다 디비를 만들어! 1위부터 5위까지 DB 비교"
 date: 2022-05-01
 author: Astro36
 category: sql

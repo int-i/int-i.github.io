@@ -4,7 +4,7 @@ date: 2022-05-08
 author: Astro36
 category: java
 tags: [java, jdk, eclipse, temurin, adoptium, sdkman, spring, springboot, web, maven, gradle]
-thumbnail: /assets/posts/2022-01-29-sdkman-kotlin-install/thumbnail.jpg
+thumbnail: /assets/posts/2022-05-08-spring-quickstart-gradle/thumbnail.jpg
 ---
 
 [Spring Boot](https://spring.io/projects/spring-boot)는 [Spring](https://spring.io/)에 필요한 **의존성과 설정, 웹 서버를 통합적으로 제공**하는 도구입니다.
@@ -12,6 +12,8 @@ thumbnail: /assets/posts/2022-01-29-sdkman-kotlin-install/thumbnail.jpg
 그렇기에 Spring 프레임워크를 이용해 **프로젝트를 시작**할 때는 **Spring Boot의 도움**을 받는 것을 추천합니다.
 
 Spring Boot에서는 [Spring Initializr](https://start.spring.io/)를 통해 **프로젝트 템플릿**을 제공합니다.
+
+![Spring Initializr](/assets/posts/2022-05-08-spring-quickstart-gradle/initializr.jpg)
 
 Spring Initializr 사이트에 들어가면 가장 먼저 **어떤 빌드 도구를 사용**할지 선택하는 체크박스가 보입니다.
 

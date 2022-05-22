@@ -80,4 +80,4 @@ public class Singleton {
 
 로직만을 처리할 경우 매번 객체를 생성해줄 필요 없이 **이전 객체를 재사용**하는 것이 효율적이기 때문입니다.
 
-참고: [Spring Bean Scope 종류 | Bean | Singleton | Prototyoe | Request | Session | Application](https://yhmane.tistory.com/m/221)
+참고: [Spring Bean Scope 종류](https://yhmane.tistory.com/m/221)

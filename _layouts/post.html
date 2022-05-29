@@ -49,8 +49,16 @@ layout: default
     </section>
   </article>
 
-  {% include disqus.html %}
+  <div id="disqus_thread" style="margin-top: 2rem;"></div>
+
   {% include mathjax.html %}
 
   <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-5487967079203120" data-ad-slot="4040226289"></ins>
 </section>
+
+<!-- Disqus -->
+<script>
+  var disqus_config=function(){this.page.url="{{ page.url | absolute_url }}",this.page.identifier="{{ page.id }}"};!function(){var e=document,t=e.createElement("script");t.src="https://int-i-blog.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();
+</script>
+<script async src="https://int-i-blog.disqus.com/count.js" id="dsq-count-scr"></script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>

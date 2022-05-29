@@ -11,7 +11,7 @@ layout: default
       <h1 class="title">{{ page.title | escape }}</h1>
       <div class="content">
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by {{ site.data.authors[page.author].name }}
-        <a class="comments link" href="{{ post.url | relative_url }}#disqus_thread" data-disqus-identifier="{{ post.id }}"></a>
+        <a class="comments link" href="#disqus_thread" data-disqus-identifier="{{ page.id }}"></a>
       </div>
     </header>
 

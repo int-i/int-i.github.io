@@ -18,7 +18,7 @@
         {% endif %}
         {% if site.manager %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
-          Manager: {% include idname.html github_id=site.manager %} (<a class="link footer__link" href="mailto:{{ site.data.authors[site.manager].email }}">{{ site.data.authors[site.manager].email }}</a>)
+          Manager: {% capture author_id %}{{ site.manager }}{% endcapture %}{% include idname.html github_id=author_id %} (<a class="link footer__link" href="mailto:{{ site.data.authors[site.manager].email }}">{{ site.data.authors[site.manager].email }}</a>)
         </li>
         {% endif %}
       </ul>

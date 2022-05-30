@@ -1,0 +1,23 @@
+---
+layout: default
+title: 작성자
+---
+
+<div class="container">
+  <h1 class="title">Authors</h1>
+  <br>
+  {% for author in site.data.authors %}
+    <section>
+      {% assign author_id = author[0] %}
+      {% assign author_name = author[1].name %}
+      <h2 id="{{ author_id }}" class="box__title">{{ author_name }}</h2>
+      <ul class="list">
+        {% for post in site.posts | where: "author", author_id %}
+          <li class="vertical-item">
+            <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

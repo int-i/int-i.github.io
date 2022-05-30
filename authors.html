@@ -10,14 +10,17 @@ title: 작성자
     <section>
       {% assign author_id = author[0] %}
       {% assign author_name = author[1].name %}
-      <h2 id="{{ author_id }}" class="box__title">{{ author_name }}</h2>
+      {% assign author_posts = site.posts | where: "author", author_id %}
+      {% if author_posts.size %}
+      <h2 id="{{ author_id }}" class="box__title">#{{ author_name }}</h2>
       <ul class="list">
-        {% for post in site.posts | where: "author", author_id %}
+        {% for post in author_posts %}
           <li class="vertical-item">
             <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a>
           </li>
         {% endfor %}
       </ul>
+      {% endif %}
     </section>
   {% endfor %}
 </div>

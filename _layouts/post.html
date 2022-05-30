@@ -10,7 +10,7 @@ layout: default
       {% endif %}
       <h1 class="title">{{ page.title | escape }}</h1>
       <div class="content">
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by {{ site.data.authors[page.author].name }}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by {% include idname.html github_id=page.author %}
         <a class="comments" href="#disqus_thread" data-disqus-identifier="{{ page.id }}"></a>
       </div>
     </header>

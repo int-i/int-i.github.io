@@ -17,6 +17,10 @@
 .post__relative {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1023px) {
+    flex-direction: column;
+  }
 }
 
 .box__nav {

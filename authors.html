@@ -11,7 +11,7 @@ title: 작성자
       {% assign author_id = author[0] %}
       {% assign author_name = author[1].name %}
       {% assign author_posts = site.posts | where: "author", author_id %}
-      {% if author_posts.size %}
+      {% if author_posts.size > 0 %}
       <h2 id="{{ author_id }}" class="box__title">#{{ author_name }}</h2>
       <ul class="list">
         {% for post in author_posts %}

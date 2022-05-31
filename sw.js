@@ -1,58 +1,46 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
-const { cacheableResponse, core, expiration, googleAnalytics, routing, strategies } = workbox;
-const { CacheableResponsePlugin } = cacheableResponse;
-const { ExpirationPlugin } = expiration;
-const { registerRoute } = routing;
-const { CacheFirst, StaleWhileRevalidate } = strategies;
+const { googleAnalytics } = workbox;
+const { ExpirationPlugin } = workbox.expiration;
+const { registerRoute } = workbox.routing;
+const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 
-core.skipWaiting();
-core.clientsClaim();
-
-// Cache Google Fonts
 registerRoute(
-  /^https:\/\/fonts\.gstatic\.com/,
+  ({ request }) => request.destination === 'image',
+  new StaleWhileRevalidate({ cacheName: 'images'  }),
+);
+
+registerRoute(
+  ({ request }) => request.destination === 'style',
   new CacheFirst({
-    cacheName: 'google-fonts-webfonts',
+    cacheName: 'styles',
     plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
+      new ExpirationPlugin({
+        maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
       }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ request }) => request.destination === 'script',
+  new CacheFirst({
+    cacheName: 'scripts',
+    plugins: [
+      new ExpirationPlugin({
+        maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+      }),
+    ],
+  }),
+);
+
+registerRoute(
+  ({ request }) => request.destination === 'font',
+  new CacheFirst({
+    cacheName: 'fonts',
+    plugins: [
       new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 365, // 365 Days
-      }),
-    ],
-  }),
-);
-
-// Cache JavaScript and CSS
-registerRoute(/\.(?:js|css)$/, new StaleWhileRevalidate());
-
-// Cache Images
-registerRoute(
-  /\.(?:png|gif|jpg|jpeg|svg)$/,
-  new CacheFirst({
-    cacheName: 'images',
-    plugins: [
-      new ExpirationPlugin({
-        maxEntries: 10,
-        maxAgeSeconds: 60 * 60 * 24 * 7, // 7 Days
-      }),
-    ],
-  }),
-);
-
-// Cache jsDelivr CDN Assets
-registerRoute(
-  /^https:\/\/cdn\.jsdelivr\.net/,
-  new CacheFirst({
-    cacheName: 'jsdelivr',
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-      new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 14, // 14 Days
       }),
     ],
   }),

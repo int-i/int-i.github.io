@@ -1,17 +1,19 @@
 .list {
   padding: 0;
   margin: 0;
-  overflow: hidden;
   list-style-type: none;
 }
 
+.horizontal-list {
+  white-space: nowrap;
+}
+
 .horizontal-item {
-  float: left;
+  display: inline-block;
 }
 
 .horizontal-item::before {
-  float: left;
-  padding: 0 1rem;
+  margin: 0 0.5rem;
 }
 
 .horizontal-item + .horizontal-item::before {
@@ -19,7 +21,7 @@
 }
 
 .horizontal-item--dense::before {
-  padding: 0 0.5rem;
+  margin: 0 0.25rem;
 }
 
 .vertical-item {

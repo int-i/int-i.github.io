@@ -70,6 +70,15 @@
   background-size: 100% 0.0625em;
 }
 
+.link--nocolor {
+  color: rgba($on-surface-color, 0.6);
+  transition: color 0.5s;
+}
+
+.link--nocolor:hover {
+  color: rgba($on-surface-color, 0.87);
+}
+
 .no-text-decoration {
   text-decoration: none;
 }

@@ -10,8 +10,8 @@ layout: default
       {% endif %}
       <h1 class="title">{{ page.title | escape }}</h1>
       <div class="content">
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by <a class="card__metadata-link" href="{{ '/authors/' | relative_url }}#{{ page.author }}">{{ site.data.authors[page.author].name }}</a>
-        <a class="card__metadata-link comments" href="#disqus_thread" data-disqus-identifier="{{ page.id }}"></a>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by <a class="link card__metalink" href="{{ '/authors/' | relative_url }}#{{ page.author }}">{{ site.data.authors[page.author].name }}</a>
+        <a class="link card__metalink comments" href="#disqus_thread" data-disqus-identifier="{{ page.id }}"></a>
       </div>
     </header>
 

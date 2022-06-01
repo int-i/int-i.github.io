@@ -27,3 +27,13 @@
 .card__metadata {
   color: rgba($on-surface-color, 0.38);
 }
+
+.card__metadata-link {
+  color: rgba($on-surface-color, 0.38);
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.card__metadata-link:hover {
+  color: rgba($on-surface-color, 0.6);
+}

@@ -29,8 +29,8 @@ layout: default
         {% endfor %}
       </ul>
       <div class="content card__metadata">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time> · by {{ site.data.authors[post.author].name }}
-        <a class="comments" href="{{ post.url | relative_url }}#disqus_thread" data-disqus-identifier="{{ post.id }}"></a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time> · by <a class="card__metadata-link" href="{{ '/authors/' | relative_url }}#{{ post.author }}">{{ site.data.authors[post.author].name }}</a>
+        <a class="card__metadata-link comments" href="{{ post.url | relative_url }}#disqus_thread" data-disqus-identifier="{{ post.id }}"></a>
       </div>
     </article>
     {% endfor %}

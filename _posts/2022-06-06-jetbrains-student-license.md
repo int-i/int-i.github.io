@@ -13,7 +13,7 @@ thumbnail: /assets/posts/2022-06-06-jetbrains-student-license/thumbnail.jpg
 
 IntelliJ IDEA Community는 IntelliJ IDEA Ultimate에서 필수적이지 않은 기능을 뺀 **깡통 버전**으로 IntelliJ IDEA Ultimate보다 사용하기 불편합니다.
 
-[new-project](/assets/posts/2022-06-06-jetbrains-student-license/new-project.png)
+![new-project](/assets/posts/2022-06-06-jetbrains-student-license/new-project.png)
 
 > IntelliJ IDEA Community에는 **존재하지 않는** Spring Initializr 기능
 
@@ -29,30 +29,30 @@ JetBrains에서도 이를 인지(?)하고 있는지, 학생 및 교사들에게�
 
 JetBrains의 [Free Educational Licenses](https://www.jetbrains.com/community/education/#students)에 들어갑니다.
 
-[student-license](/assets/posts/2022-06-06-jetbrains-student-license/student-license.png)
+![student-license](/assets/posts/2022-06-06-jetbrains-student-license/student-license.png)
 
 밑으로 조금 내려서 파란색 "Apply Now" 찾아 들어갑니다.
 
-[apply-now](/assets/posts/2022-06-06-jetbrains-student-license/apply-now.png)
+![apply-now](/assets/posts/2022-06-06-jetbrains-student-license/apply-now.png)
 
-인하대학교 학생이라면 이메일 인증 이외의 방법으로도 학생 라이센스를 받을 수 있지만, 개인적으로는 이메일 인증을 추천합니다.
+인하대학교 학생이라면 이메일 인증 이외의 방법으로도 학생 라이센스를 받을 수 있지만, 개인적으로는 **이메일 인증**을 추천합니다.
 
 첫 번째 탭(대학 이메일 주소)은 학교에서 제공하는 `@inha.edu` 이메일로 인증하는 방법입니다.
 
-[submit-form](/assets/posts/2022-06-06-jetbrains-student-license/submit-form.jpeg)
+![submit-form](/assets/posts/2022-06-06-jetbrains-student-license/submit-form.jpeg)
 
-위처럼 양식을 다 채우고 파란색 "무료 제품 신청"을 누르면, 학교 이메일로 이메일 인증 링크를 보내줍니다.
+위처럼 양식을 다 채우고 파란색 "무료 제품 신청"을 누르면, 학교 이메일로 **이메일 인증 링크**를 보내줍니다.
 
-[gmail](/assets/posts/2022-06-06-jetbrains-student-license/gmail.png)
+![gmail](/assets/posts/2022-06-06-jetbrains-student-license/gmail.png)
 
-링크를 클릭하면 학생 인증이 완료됩니다.
+링크를 클릭하면 **학생 인증이 완료**됩니다.
 
-[complete](/assets/posts/2022-06-06-jetbrains-student-license/complete.png)
+![complete](/assets/posts/2022-06-06-jetbrains-student-license/complete.png)
 
-이제 내 계정 정보로 들어가서 라이센스 ID를 확인하면 됩니다.
+이제 내 계정 정보로 들어가서 **라이센스 ID**를 확인하면 됩니다.
 
-[license-id](/assets/posts/2022-06-06-jetbrains-student-license/license-id.jpeg)
+![license-id](/assets/posts/2022-06-06-jetbrains-student-license/license-id.jpeg)
 
-마지막으로 IntelliJ IDEA Ultimate에 라이센스를 등록합니다.
+마지막으로 IntelliJ IDEA Ultimate에 **라이센스를 등록**합니다.
 
-[intellij](/assets/posts/2022-06-06-jetbrains-student-license/intellij.png)
+![intellij](/assets/posts/2022-06-06-jetbrains-student-license/intellij.png)

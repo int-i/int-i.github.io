@@ -36,7 +36,7 @@ conn.close()
 Python의 **`with` 문법**을 이용하면, `close` 함수 호출을 **생략**할 수 있습니다.
 
 ```py
-with connect(dbname='db', user='user', password='pw1234', host='localhost', port=5432) as conn:
+with psycopg2.connect(dbname='db', user='user', password='pw1234', host='localhost', port=5432) as conn:
     with conn.cursor() as cur:
         # ...
 ```

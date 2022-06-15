@@ -28,13 +28,6 @@
     "display": "standalone",
     "scope": "/",
     "theme_color": "#121212",
-    "shortcuts": [
-        {
-            "name": "인하대학교 인트아이 솔루션",
-            "short_name": "솔루션",
-            "url": "/solutions/?source=pwa"
-        }
-    ],
     "description": "인하대학교 정보통신공학과 프로그래밍 소모임 인트아이 스터디 블로그",
     "lang": "ko-KR"
 }

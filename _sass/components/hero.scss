@@ -1,9 +1,9 @@
 .hero {
   position: relative;
   height: 50vh;
-  background: center/cover no-repeat url('/assets/posts/2020-01-27-welcome/inti_hackathon.jpg') ;
-  border-bottom: 1px rgba($on-surface-color, 0.12) solid;
+  background: center/cover no-repeat url('/assets/posts/2020-01-27-welcome/inti_hackathon.jpg');
   text-align: center;
+  word-break: keep-all;
 }
 
 .hero__scrim {

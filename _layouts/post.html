@@ -55,7 +55,9 @@ layout: default
     </section>
   </article>
 
+  {% if page.category != 'scrap' %}
   <div id="disqus_thread" style="margin-top: 2rem;"></div>
+  {% endif %}
 
   {% include mathjax.html %}
 
@@ -63,9 +65,11 @@ layout: default
   <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </section>
 
+{% if page.category != 'scrap' %}
 <!-- Disqus -->
 <script>
   var disqus_config=function(){this.page.url="{{ page.url | absolute_url }}",this.page.identifier="{{ page.id }}"};!function(){var e=document,t=e.createElement("script");t.src="https://int-i-blog.disqus.com/embed.js",t.setAttribute("data-timestamp",+new Date),(e.head||e.body).appendChild(t)}();
 </script>
 <script async src="https://int-i-blog.disqus.com/count.js" id="dsq-count-scr"></script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}

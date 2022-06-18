@@ -18,6 +18,8 @@
 
 `_data/authors.yml` 파일에 아래와 같이 정보 추가
 
+### 예시
+
 ```yml
 Astro36: # GitHub 아이디(필수)
   name: 박승재 # 이름(필수)
@@ -33,6 +35,8 @@ Astro36: # GitHub 아이디(필수)
 파일 이름은 영어로 작성해야 하며 공백(` `) 대신 하이픈(`-`) 사용
 
 파일 상단에 [Front Matter](https://jekyllrb.com/docs/front-matter/) 작성
+
+### 예시
 
 ```yml
 ---
@@ -59,6 +63,26 @@ Front Matter 아래에 [Markdown](https://guides.github.com/features/mastering-m
 `assets/posts/`에 `yyyy-mm-dd-title` 디렉토리를 생성 후, 해당 디렉토리에 이미지를 업로드
 
 [2020-01-27-welcome](./assets/posts/2020-01-27-welcome/) 디렉토리 참고
+
+## (22.6.18 업데이트) 외부 URL 스크랩
+
+일반적인 글 작성과 동일하지만 `category`를 `scrap`으로 설정 **(필수)**
+
+글 본문은 스크랩하려는 URL 링크만 작성
+
+### 예시
+
+```yml
+---
+title: "인하대 계정으로 MS Office 무료로 받기"
+author: yt4307
+category: scrap
+---
+
+https://youtu.be/29U-blv_dJg
+```
+
+참고: [2021-10-07-inha-ms-office.md](/_posts/2021-10-07-inha-ms-office.md)
 
 ## License
 

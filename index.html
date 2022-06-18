@@ -15,22 +15,30 @@ layout: default
 <div class="container grid grid--weighted-double-stage">
   <section>
     {% for post in paginator.posts %}
-    <article class="card">
+    <article class="card {% if post.category == 'scrap' %}card--scrap{% endif %}">
+      {% if post.category == 'scrap' %}
+      <a class="no-text-decoration" href="{{ post.content | strip_html | strip }}">
+      {% else %}
       <a class="no-text-decoration" href="{{ post.url | relative_url }}">
+      {% endif %}
         {% if post.thumbnail %}
         <img class="card__image" alt="Post thumbnail" src="{{ post.thumbnail | relative_url }}">
         {% endif %}
-        <header class="title card__title">{{ post.title | escape }}</header>
+        <header class="title card__title">{% if post.category == 'scrap' %}[스크랩] {% endif %}{{ post.title | escape }}</header>
         <div class="content card__content">{{ post.excerpt | strip_html | truncate: 150 }}</div>
       </a>
+      {% if post.tags %}
       <ul class="hashtags">
         {% for tag in post.tags %}
           <li class="hashtag"><a class="link" href="{{ "/tags" | relative_url }}#{{ tag }}">{{ tag }}</a></li>
         {% endfor %}
       </ul>
+      {% endif %}
       <div class="content card__metadata">
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time> · by <a class="link card__metalink" href="{{ '/authors/' | relative_url }}#{{ post.author }}">{{ site.data.authors[post.author].name }}</a>
+        {% if post.category != 'scrap' %}
         <a class="link card__metalink comments" href="{{ post.url | relative_url }}#disqus_thread" data-disqus-identifier="{{ post.id }}"></a>
+        {% endif %}
       </div>
     </article>
     {% endfor %}

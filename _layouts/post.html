@@ -8,7 +8,7 @@ layout: default
       {% if page.thumbnail %}
       <img class="post__image" alt="Post thumbnail" src="{{ page.thumbnail | relative_url }}">
       {% endif %}
-      <h1 class="title">{{ page.title | escape }}</h1>
+      <h1 class="title">{% if page.category == 'scrap' %}[스크랩] {% endif %}{{ page.title | escape }}</h1>
       <div class="content">
         <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time> · by <a class="link link--nocolor" href="{{ '/authors/' | relative_url }}#{{ page.author }}">{{ site.data.authors[page.author].name }}</a>
         <a class="link link--nocolor comments" href="#disqus_thread" data-disqus-identifier="{{ page.id }}"></a>
@@ -17,13 +17,19 @@ layout: default
 
     <section class="post__content">
       <div class="content render">
+        {% if page.category == 'scrap' %}
+        <a class="link link--animated" href="{{ content | strip_html | strip }}">{{ content | strip_html | strip }}</a>
+        {% else %}
         {{ content }}
+        {% endif %}
       </div>
+      {% if page.tags %}
       <ul class="hashtags">
         {% for tag in page.tags %}
           <li class="hashtag"><a class="link" href="{{ "/tags" | relative_url }}#{{ tag }}">{{ tag }}</a></li>
         {% endfor %}
       </ul>
+      {% endif %}
     </section>
 
     <section class="post__relative">
@@ -31,7 +37,7 @@ layout: default
       <article>
         <a class="no-text-decoration" href="{{ page.next.url | relative_url }}">
           <div class="box__nav">← 다음 글</div>
-          <div class="box__title">{{ page.next.title | escape }}</div>
+          <div class="box__title">{% if page.next.category == 'scrap' %}[스크랩] {% endif %}{{ page.next.title | escape }}</div>
         </a>
       </article>
       {% else %}
@@ -42,7 +48,7 @@ layout: default
       <article class="text-align-right">
         <a class="no-text-decoration" href="{{ page.previous.url | relative_url }}">
           <div class="box__nav">이전 글 →</div>
-          <div class="box__title">{{ page.previous.title | escape }}</div>
+          <div class="box__title">{% if page.previous.category == 'scrap' %}[스크랩] {% endif %}{{ page.previous.title | escape }}</div>
         </a>
       </article>
       {% endif %}

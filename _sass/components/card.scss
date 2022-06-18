@@ -4,6 +4,10 @@
   margin: 1rem 0;
 }
 
+.card--scrap {
+  border-left: 0.25rem solid $primary-color;
+}
+
 .card__title {
   font-size: 1.5rem;
 }

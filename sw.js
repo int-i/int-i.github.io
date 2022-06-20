@@ -12,11 +12,11 @@ registerRoute(
 
 registerRoute(
   ({ request }) => request.destination === 'style',
-  new CacheFirst({
+  new StaleWhileRevalidate({
     cacheName: 'styles',
     plugins: [
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+        maxAgeSeconds: 60 * 60 * 24 * 30, // 14 Days
       }),
     ],
   }),
@@ -24,11 +24,11 @@ registerRoute(
 
 registerRoute(
   ({ request }) => request.destination === 'script',
-  new CacheFirst({
+  new StaleWhileRevalidate({
     cacheName: 'scripts',
     plugins: [
       new ExpirationPlugin({
-        maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
+        maxAgeSeconds: 60 * 60 * 24 * 30, // 14 Days
       }),
     ],
   }),

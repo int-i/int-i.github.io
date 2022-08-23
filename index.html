@@ -15,8 +15,8 @@ layout: default
 </section>
 {% endif %}
 
-<div class="container grid grid--weighted-double-stage">
-  <section>
+<section class="container grid grid--weighted-double-stage">
+  <div>
     {% for post in paginator.posts %}
     <article class="card {% if post.category == 'scrap' %}card--scrap{% endif %}">
       {% if post.category == 'scrap' %}
@@ -79,8 +79,8 @@ layout: default
       {% endif %}
     </div>
     {% endif %}
-  </section>
-  <section>
+  </div>
+  <div>
     <article class="card">
       <header class="title card__title card__title--small">Tag</header>
       <div class="content card__content">
@@ -98,8 +98,28 @@ layout: default
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5487967079203120" data-ad-slot="2426401878" data-ad-format="auto" data-full-width-responsive="false"></ins>
       <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
     </article>
-  </section>
-</div>
+  </div>
+</section>
+
+{% if paginator.page == 1 %}
+<section class="container">
+  <div id="shortcuts" class="shortcuts">
+    {% for shortcut in site.data.shortcuts %}
+    <a class="shortcut__link" href="{{ shortcut.link }}" style="background-image: linear-gradient(to bottom, rgba(18,18,18,0.38), rgba(18,18,18,0.6)), url('{{ shortcut.image }}')">{{ shortcut.title }} →</a>
+    {% endfor %}
+  </div>
+  <script>
+    const shortcuts = document.getElementById('shortcuts');
+    let scrollRight = true;
+    setInterval(() => {
+      shortcuts.scrollLeft += (scrollRight ? 1 : -1);
+      if (shortcuts.scrollLeft <= 0 || shortcuts.scrollLeft >= shortcuts.scrollWidth - shortcuts.clientWidth) {
+        scrollRight = !scrollRight;
+      }
+    }, 50);
+  </script>
+</section>
+{% endif %}
 
 <!-- Disqus -->
 <script async src="https://int-i-blog.disqus.com/count.js" id="dsq-count-scr"></script>

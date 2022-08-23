@@ -1,0 +1,17 @@
+.shortcuts {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.shortcut__link {
+  padding: 1.5rem 2rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  flex-basis: 10rem;
+  background-repeat : no-repeat;
+  background-size : cover;
+  background-position : center;
+  color: rgba($on-surface-color, 0.87);
+  text-decoration: none;
+  word-break: keep-all;
+}

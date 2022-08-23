@@ -37,8 +37,13 @@
   text-decoration: none;
 }
 
+.hero_group {
+  display: flex;
+}
+
 .hero__button {
-  margin: 1rem 0 0;
+  display: block;
+  margin: 1rem 0.5rem;
   padding: 0.5rem 1rem;
   color: rgba($on-surface-color, 0.87);
   font-size: 1.2rem;

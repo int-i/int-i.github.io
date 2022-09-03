@@ -1,5 +1,5 @@
 ---
-title: "역시 Spring Security야. 성능 확실하구만: Spring Security로 로그인 API 구현하기"
+title: "역시 스프링이야. 성능 확실하구만: Spring Security로 로그인 API 구현하기"
 date: 2022-09-04
 author: Astro36
 category: java

@@ -60,11 +60,11 @@ thumbnail: /assets/posts/2022-09-04-growupthon-retrospective/recruitment-poster.
 프론트엔드 팀은 정보통신공학과 소개 페이지를 개발하였습니다.
 각 인원이 파트를 나눠 HOME, ABOUT, FEATURES, GATHERING 을 개발했으며, 각 버튼을 누르면 해당 내용으로 스크롤 되는 방식으로 개발이 진행 되었습니다.
 
-![AI-result](/assets/posts/2022-09-04-growupthon-retrospective/AI-result.jpg)
+![AI-result](/assets/posts/2022-09-04-growupthon-retrospective/ai-result.jpg)
 
-![AI-result-2](/assets/posts/2022-09-04-growupthon-retrospective/Ai-result-2.jpg)
+![AI-result-2](/assets/posts/2022-09-04-growupthon-retrospective/ai-result-2.jpg)
 
-![AI-result-3](/assets/posts/2022-09-04-growupthon-retrospective/Ai-result-3.jpg)
+![AI-result-3](/assets/posts/2022-09-04-growupthon-retrospective/ai-result-3.jpg)
 
 [인공지능 팀 결과물](https://drive.google.com/drive/u/2/folders/1ThUTFPpaz9pf3z-RJw563sU8LEFeTHdp)
 

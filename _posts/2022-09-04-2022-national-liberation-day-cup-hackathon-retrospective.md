@@ -9,6 +9,7 @@ thumbnail: /assets/posts/2022-09-04-growupthon-retrospective/recruitment-poster.
 
 * 본 회고록은 기술적 내용에 대한 회고보다는 해커톤 진행에 대한 내용에 대한 회고를 담았습니다.  
 기술적 내용에 대한 회고는 다른 회고를 참고해주세요!
+
 1. [백엔드 팀 스터디 내용 정리](https://int-i.github.io/java/2022-09-04/spring-security-login/)
 ---
 
@@ -53,6 +54,7 @@ thumbnail: /assets/posts/2022-09-04-growupthon-retrospective/recruitment-poster.
 
 ## 결과
 ![Frontend-result](/assets/posts/2022-09-04-growupthon-retrospective/frontend-result.jpg)
+
 [프론트엔드 팀 결과물](https://growupthon-frontend.netlify.app/)
 
 프론트엔드 팀은 정보통신공학과 소개 페이지를 개발하였습니다.

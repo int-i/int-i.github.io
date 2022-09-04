@@ -1,6 +1,6 @@
 ---
 title: "네가 선택한 컴퓨터 그래픽스... Visual Studio 프로젝트에 OpenGL 설치하기"
-date: 2022-09-05
+date: 2022-09-04
 author: Astro36
 category: c
 tags: [c, visual_studio, opengl, freeglut, computer_graphics, nuget]

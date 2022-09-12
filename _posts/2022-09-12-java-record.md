@@ -9,7 +9,7 @@ thumbnail: /assets/posts/2022-09-12-java-record/thumbnail.jpg
 
 Kotlin의 [Data class](https://kotlinlang.org/docs/data-classes.html)는 **데이터 저장** 목적으로 만든 클래스를 위한 문법입니다.
 
-`toString()`, `hashCode()`, `equals()` 등의 메소드를 **자동으로 구현**해주기 때문에, 간단하게 **DTO(Data Transfer Object)등의 클래스**를 만들 때 자주 이용합니다.
+Data class는 `toString()`, `hashCode()`, `equals()` 등의 메소드를 **자동으로 구현**해주기 때문에, 간단하게 **DTO(Data Transfer Object)등의 클래스**를 만들 때 자주 이용합니다.
 
 Java에서는 그동안 [Lombok](https://projectlombok.org/)이 Data class의 역할을 **대신**해 왔지만,
 
@@ -90,9 +90,9 @@ record SmallPoint(int x, int y) {
 record Card(@MyAnno Rank rank, @MyAnno Suit suit) { }
 ```
 
-`record`는 상속이 불가능한 **final 클래스**이며, 추상 클래스가 될 수 없습니다.
+`record`는 **상속이 불가**능한 **final 클래스**이며, 추상 클래스가 될 수 없습니다.
 
-> 참고: [자바 #23 final 키워드(클래스, 메소드)](https://sas-study.tistory.com/60)
+참고: [자바 #23 final 키워드(클래스, 메소드)](https://sas-study.tistory.com/60)
 
 마찬가지로 다른 클래스를 상속할 수도 없지만, **인터페이스는 상속**할 수 있습니다.
 

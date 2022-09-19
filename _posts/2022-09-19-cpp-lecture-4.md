@@ -4,4 +4,4 @@ author: yt4307
 category: scrap
 ---
 
-https://youtu.be/Mi_pipWMmgk
+https://youtu.be/lqKL1wVdc0M

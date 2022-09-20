@@ -3,22 +3,21 @@ layout: default
 title: 태그
 ---
 
-<div class="container">
+<section class="container">
   <h1 class="title">Tags</h1>
-  <br>
   {% assign sorted_tags = site.tags | sort %}
   {% for tag in sorted_tags %}
-    <section>
+    <article class="content">
       {% assign tag_name = tag | first %}
       {% assign tag_posts = tag | last %}
       <h2 id="{{ tag_name }}" class="box__title">#{{ tag_name }}</h2>
       <ul class="list">
         {% for post in tag_posts %}
           <li class="vertical-item">
-            <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a>
+            <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a> <span class="smaller"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time> [{{ post.category }}]</span>
           </li>
         {% endfor %}
       </ul>
-    </section>
+    </article>
   {% endfor %}
-</div>
+</section>

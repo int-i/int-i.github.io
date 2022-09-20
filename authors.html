@@ -3,11 +3,10 @@ layout: default
 title: 작성자
 ---
 
-<div class="container">
+<section class="container">
   <h1 class="title">Authors</h1>
-  <br>
   {% for author in site.data.authors %}
-    <section>
+    <article class="content" style="display: none;">
       {% assign author_id = author[0] %}
       {% assign author_name = author[1].name %}
       {% assign author_posts = site.posts | where: "author", author_id %}
@@ -16,11 +15,22 @@ title: 작성자
       <ul class="list">
         {% for post in author_posts %}
           <li class="vertical-item">
-            <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a>
+            <a class="link link--animated" href="{{ post.url }}">{{ post.title }}</a> <span class="smaller"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time> [{{ post.category }}]</span>
           </li>
         {% endfor %}
       </ul>
       {% endif %}
-    </section>
+    </article>
   {% endfor %}
-</div>
+  <script>
+    const authors = Array.from(document.querySelectorAll('.box__title'));
+    const authorId = window.location.hash.slice(1);
+    if (authorId) {
+      document.getElementById(authorId).parentElement.style.display = 'block';
+    } else {
+      authors.forEach(author => {
+        author.parentElement.style.display = 'block';
+      });
+    }
+  </script>
+</section>

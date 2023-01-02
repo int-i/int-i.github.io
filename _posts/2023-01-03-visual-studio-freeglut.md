@@ -3,7 +3,7 @@ title: "Visual Studio에서 FreeGLUT 빌드하는 방법"
 date: 2023-01-03
 author: Astro36
 category: c
-tags: [c, cpp, windows, visual_studio, cmake, x86, x64, freeglut]
+tags: [c, cpp, windows, visual_studio, cmake, x86, x64, opengl, freeglut, computer_graphics]
 ---
 
 [FreeGLUT](https://freeglut.sourceforge.net/)는 OpenGL Utility Toolkit(GLUT)의 **오픈소스** 버전으로, 간단한 **OpenGL 프로그래밍**에 편리하게 사용할 수 있는 라이브러리입니다.
@@ -67,6 +67,8 @@ Visual Studio **시작화면**에서 `로컬 폴더 열기`를 선택합니다.
 Debug 타입의 경우, `freeglutd.dll`, `freeglutd.lib`, `freeglut_staticd.lib`와 같이 파일명 마지막에 `d`가 붙습니다.
 
 최종적으로 **컴파일된 라이브러리를 배포**할 때는 `freeglut-3.4.0/include` 폴더(**헤더파일**)와 함께 배포합니다.
+
+---
 
 아래는 FreeGLUT v3.4.0 **컴파일한 결과**입니다.
 

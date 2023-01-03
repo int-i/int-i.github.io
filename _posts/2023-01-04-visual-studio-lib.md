@@ -11,7 +11,7 @@ tags: [cpp, c, windows, visual_studio, dll, header, library]
 
 ## DLL
 
-`project > 속성 > 디버깅 > 환경`으로 이동해 아래와 같이 환경 변수를 지정합니다.`
+`project > 속성 > 디버깅 > 환경`으로 이동해 아래와 같이 환경 변수를 지정합니다.
 
 | Win32(x86) | x64 |
 | --- | --- |

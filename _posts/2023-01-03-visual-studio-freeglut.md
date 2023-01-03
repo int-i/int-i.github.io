@@ -75,3 +75,5 @@ Debug 타입의 경우, `freeglutd.dll`, `freeglutd.lib`, `freeglut_staticd.lib`
 Visual Studio에서 **컴파일된 FreeGLUT를 사용하는 방법**을 함께 첨부해두었습니다.
 
 참고: [FreeGLUT Prebuilt](https://github.com/Astro36/freeglut-prebuilt)
+
+참고: [Visual Studio에서 외부 라이브러리를 불러오는 방법](https://int-i.github.io/cpp/2023-01-04/visual-studio-lib/)

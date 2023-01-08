@@ -4,11 +4,12 @@ date: 2023-01-08
 author: Astro36
 category: github
 tags: [github, linguist, language, library, vendored, gitattributes]
+thumbnail: /assets/posts/2023-01-08-github-linguist/thumbnail.jpg
 ---
 
 GitHub 저장소에 **라이브러리** 헤더 파일, CSS 등을 포함해서 올리면 아래와 같이 **Languages 표시**가 라이브러리 코드로 인해 이상하게 출력되는 경우가 있다.
 
-![language](/assets/posts/2023-01-08-github-llinguist/language.png)
+![language](/assets/posts/2023-01-08-github-linguist/language.png)
 
 > `api/include/**.h` 라이브러리 헤더 파일로 인해 **C언어** 프로젝트로 인식
 
@@ -36,7 +37,7 @@ api/include/** linguist-vendored
 
 > `api/include/**.h` 라이브러리 헤더 파일이 **프로젝트 언어 인식에서 제외**된다.
 
-![language-fixed](/assets/posts/2023-01-08-github-llinguist/language-fixed.png)
+![language-fixed](/assets/posts/2023-01-08-github-linguist/language-fixed.png)
 
 > **C++** 프로젝트로 올바르게 인식됨
 

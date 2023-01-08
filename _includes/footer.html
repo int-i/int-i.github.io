@@ -4,7 +4,16 @@
       <a class="title footer__title" href="{{ site.url }}">{{ site.title }}</a>
     </div>
     <div class="content footer__content">
-      {{ site.description }}
+      <ul class="list">
+        <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
+          {{ site.description }}
+        </li>
+        {% if site.developer %}
+        <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
+          Developer: <a class="link footer__link" href="{{ '/authors/' | relative_url }}#{{ site.developer }}">{{ site.data.authors[site.developer].admission_year | slice: 2, 3 }}{{ site.data.authors[site.developer].name }}</a> (<a class="link footer__link" href="mailto:{{ site.data.authors[site.developer].email }}">{{ site.data.authors[site.developer].email }}</a>)
+        </li>
+        {% endif %}
+      </ul>
       <ul class="list">
         {% if site.location %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">

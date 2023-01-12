@@ -37,6 +37,14 @@
   color: rgba($on-surface-color, 0.6);
 }
 
+.flat {
+  background-color: rgba($on-surface-color, 0.05);
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  color: rgba($on-surface-color, 0.6);
+}
+
 .title {
   margin: 1rem 0;
   font-size: 2rem;

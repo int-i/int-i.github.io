@@ -13,9 +13,14 @@ layout: default
     </div>
   </div>
 </section>
+<section class="flat">
+  <article class="container container--flat">
+    [공지사항] <a class="link no-text-decoration" href="/information/2023-01-12/welcome/">소프트웨어를 여행하는 히치하이커를 위한 안내서: 인트아이</a>
+  </article>
+</section>
 {% endif %}
 
-<section class="container grid grid--weighted-double-stage">
+<section class="container container--dense grid grid--weighted-double-stage">
   <div>
     {% for post in paginator.posts %}
     <article class="card {% if post.category == 'scrap' %}card--scrap{% endif %}">

@@ -7,21 +7,19 @@ tags: [google_analytics, search_console, naver, search_advisor, stats]
 thumbnail: /assets/posts/2023-02-04-blog-stats-3y/thumbnail.jpg
 ---
 
-안녕하세요. 오늘은 **3년** 동안 **인트아이 스터디 블로그**가 얼마나 성장했는지 풀어보려 합니다.
+안녕하세요. 오늘은 **3년** 동안 **인트아이 스터디 블로그**가 얼마나 성장했는지 풀어보려해요.
 
-인트아이 블로그의 첫 번째 글은 2020년 1월 27일에 작성된 회원 모집글 입니다.
-
-지금으로부터 110번 째 전 글이네요.
+인트아이 블로그의 첫 번째 글은 2020년 1월 27일에 작성된 회원 모집글이에요.
 
 첫 번째 글: [인트아이를 여행하는 히치하이커를 위한 안내서](https://int-i.github.io/information/2020-01-27/welcome/)
 
 ## 구글 애널리틱스 통계
 
-인트아이 블로그에는 [구글 애널리틱스](https://analytics.google.com/analytics/web/?hl=ko)를 이용해 방문자 통계를 수집하도록 했습니다.
+인트아이 블로그에는 [구글 애널리틱스](https://analytics.google.com/analytics/web/?hl=ko)를 이용해 방문자 통계를 수집하도록 했어요.
 
 ![overview](/assets/posts/2023-02-04-blog-stats-3y/overview.png)
 
-3년간의 블로그 **조회수**는 총 **11만 5천** 회네요.
+3년간의 블로그 **조회수**는 총 **11만 5천** 회에요.
 
 **최다 조회수**를 가지고 있는 글은 [Docker Compose를 이용해 MySQL을 세팅하는 법](https://int-i.github.io/sql/2020-12-31/mysql-docker-compose/)이고요.
 
@@ -31,7 +29,7 @@ thumbnail: /assets/posts/2023-02-04-blog-stats-3y/thumbnail.jpg
 
 ![soma](/assets/posts/2023-02-04-blog-stats-3y/soma.png)
 
-> **SW마에스트로** 회의 중에 누가 블로그 링크를 퍼 날랐나 보네요 (Webex는 Zoom 같은 온라인 회의 프로그램)
+> **SW마에스트로** 회의 중에 누가 블로그 링크를 퍼 날랐나봐요 (Webex는 Zoom 같은 온라인 회의 프로그램)
 
 **블로그 유입 경로** 통계를 까보면, 실제로 `*.atlassian.net`(Jira)이나 `trello.com` 형태의 도메인도 많이 보이더라고요.
 
@@ -65,7 +63,7 @@ thumbnail: /assets/posts/2023-02-04-blog-stats-3y/thumbnail.jpg
 
 ![adsense](/assets/posts/2023-02-04-blog-stats-3y/adsense.png)
 
-> 이제 절반 모았다
+> 이제 절반 모았다!
 
 구글 애드센스는 **100달러**부터 광고 수익금 **출금**이 가능해요.
 
@@ -95,7 +93,7 @@ thumbnail: /assets/posts/2023-02-04-blog-stats-3y/thumbnail.jpg
 | 22년 12월 | $5.45 | $47.51    |
 | 23년 1월  | $3.09 | **$50.6** |
 
-> 10월 수익 어떻게 7달러 찍은 거..?
+> 10월 수익은 어떻게 7달러 찍은 거..?
 
 ## 네이버 서치어드바이저 통계
 

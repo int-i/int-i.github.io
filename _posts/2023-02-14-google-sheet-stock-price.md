@@ -15,7 +15,7 @@ thumbnail: /assets/posts/2023-02-14-google-sheet-stock-price/thumbnail.jpg
 
 **구글 앱스 스크립트**는 **자바스크립트**로 작성하기 때문에 VBA보다 진입장벽이 낮고, 다양한 **유틸 함수**와 **사용법 문서**를 제공하기 때문에 원하는 기능을 구현하기도 쉽습니다.
 
-참고: [Apps Script | Google Developers](https://developers.google.com/apps-script/reference?hl=ko)
+참고: [Apps Script - Google Developers](https://developers.google.com/apps-script/reference?hl=ko)
 
 ## Google Finance
 
@@ -110,7 +110,7 @@ function YAHOOFINANCE(ticker) {
 }
 ```
 
-참고: [UrlFetchApp | Apps Script | Google Developers](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app?hl=ko)
+참고: [UrlFetchApp - Apps Script - Google Developers](https://developers.google.com/apps-script/reference/url-fetch/url-fetch-app?hl=ko)
 
 다시 **스프레드시트**로 돌아와서 닌텐도 주식을 불러오도록 명령합니다: `=YAHOOFINANCE("7974.T")`
 

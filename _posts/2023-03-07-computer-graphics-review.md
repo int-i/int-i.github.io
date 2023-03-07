@@ -4,12 +4,11 @@ date: 2023-03-07
 author: Astro36
 category: retrospective
 tags: [retrospective, c, cpp, opengl, freeglut, computer_graphics]
-thumbnail: /assets/posts/2023-03-07-computer-graphics-review/thumbnail.png
+thumbnail: /assets/posts/2023-03-07-computer-graphics-review/thumbnail.jpg
 ---
 
 > 그래픽스는 수학을 좋아한다.
 
-```txt
 그래픽스는 수학을 좋아한다.
 
 그들은 새로운 그림을 그릴 때 대상의 본질적인 것에 대해 물어보는 법이 없다.
@@ -21,7 +20,8 @@ thumbnail: /assets/posts/2023-03-07-computer-graphics-review/thumbnail.png
 그러면 그들은 "야, 참으로 정교하게 설계된 주전자구나!"라고 소리를 지른다.
 
 '어린그래픽스' 중
-```
+
+---
 
 인하대학교의 ICE3016 **컴퓨터그래픽스설계**는 정보통신공학과의 주요 **설계과목** 중 하나로,
 

@@ -15,7 +15,7 @@ thumbnail: /assets/posts/2023-03-07-computer-graphics-review/thumbnail.jpg
 
 만일 컴퓨터에게 "작고 하얀 주전자를 봤어요. 내부는 투명했고 표면에 은은한 조명이 반사돼서 맑고 깨끗한 느낌이 들었어요"라고 말하면 그들은 그 물건이 어떤 그림인지를 생각해 내지 못한다.
 
-그들에게는 "Clockwise로 정의된 Utah Teapot을 봤어요. BRDF Shader와 Back-face Culling이 적용됐어요"라고 말해야 한다.
+그들에게는 "Clockwise로 정의된 Utah Teapot을 봤어요. Perspective Projection이 사용됐고 BRDF Shader와 Back-face Culling이 적용됐어요"라고 말해야 한다.
 
 그러면 그들은 "야, 참으로 정교하게 설계된 주전자구나!"라고 소리를 지른다.
 

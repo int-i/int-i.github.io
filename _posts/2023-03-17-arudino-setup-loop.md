@@ -3,7 +3,7 @@ title: "네모난 보드속에 피어난 How is the life? 아두이노 setup과 
 date: 2023-03-17
 author: Astro36
 category: cpp
-tags: [cpp, c, hardware, arduino, system_programming, main, setup, loop]
+tags: [cpp, c, hardware, arduino, system_programming, embedded_system, main, setup, loop]
 thumbnail: /assets/posts/2023-03-17-arudino-setup-loop/thumbnail.jpg
 ---
 

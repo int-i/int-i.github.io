@@ -1,5 +1,5 @@
 ---
-title: "구글 스프레드시트로 주식 정보 불러오기 (w/ Yahoo Finance)"
+title: "구글 스프레드시트로 주식 정보 불러오기 완전 쉬워요~ (w/ Yahoo Finance)"
 date: 2023-02-14
 author: Astro36
 category: javascript

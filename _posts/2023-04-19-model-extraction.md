@@ -117,7 +117,7 @@ Distillation은 모델을 **압축**하는 기법인데, 크기가 큰 모델을
 
 ![ppt18](/assets/posts/2023-04-19-model-extraction/ppt18.jpg)
 
-수식에서의 **화살표**는 모델에서의 순전파(Forward Propagation)와 역전파(Backpropagation)를 의미합니다.
+수식에서의 **화살표**는 모델에서의 순전파(Forward Propagation)와 역전파(Back Propagation)를 의미합니다.
 
 Black-Box Ripper는 미리 학습 데이터를 준비하지 않아도, Generator를 이용해 **Proxy Dataset** Z를 만들어 Student 모델을 학습시킵니다.
 

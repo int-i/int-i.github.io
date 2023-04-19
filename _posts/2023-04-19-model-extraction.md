@@ -1,5 +1,5 @@
 ---
-title: "[논문 리뷰] ACTIVETHEIFF와 Black-Box Ripper"
+title: "[논문 리뷰] 뭐야 내 모델 돌려줘요: ACTIVETHEIFF와 Black-Box Ripper"
 date: 2023-04-19
 author: Astro36
 category: ai

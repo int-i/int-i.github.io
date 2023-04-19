@@ -139,6 +139,8 @@ V3부터는 **CRF 없이도 좋은 성능**이 나와 CRF가 제거되었다고 
 
 V3+에는 후처리 과정을 **Encoder-Decoder** 과정으로 나누어 ASPP 결과를 바로 Upsampling하지 않고, **Encoder에서 가져온 값과 합쳐서 Upsampling**합니다.
 
+> 위 슬라이드는 [인하대학교 빅데이터 학회 IBAS](https://www.inhabas.com/) 논문 리뷰 스터디에서 사용된 자료입니다.
+
 참고: [Semantic segmentation과 Instance segmentation의 차이](https://ganghee-lee.tistory.com/44)
 
 참고: [Semantic Segmentation (FCN, Fully Convolutional Network)](https://seongkyun.github.io/study/2019/12/08/segmentation/)

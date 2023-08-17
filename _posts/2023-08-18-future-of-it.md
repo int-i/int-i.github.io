@@ -1,6 +1,6 @@
 ---
 title: "내가 바라보는 IT 업계의 미래 (소모임 회장직을 받으며)"
-date: 2023-08-17
+date: 2023-08-18
 author: Astro36
 category: retrospective
 tags: [retrospective, it, ai, algorithm, deep_learning, embedded_system, hardware]

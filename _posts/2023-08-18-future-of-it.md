@@ -4,6 +4,7 @@ date: 2023-08-18
 author: Astro36
 category: retrospective
 tags: [retrospective, it, ai, algorithm, deep_learning, embedded_system, hardware]
+thumbnail: /assets/posts/2023-08-18-future-of-it/thumbnail.jpg
 ---
 
 > 기술은 끊임없이 변하기 때문에, 나는 변하지 않는 것에 집중한다. - 제프 베조스, 아마존 창업자

@@ -4,6 +4,7 @@ date: 2023-08-21
 author: Astro36
 category: information
 tags: [information, recruit, ai, algorithm, deep_learning, embedded_system, hardware]
+thumbnail: /assets/img/thumbnail.jpg
 ---
 
 안녕하세요. **인트아이 5대 회장** 정보통신공학과 박승재입니다.

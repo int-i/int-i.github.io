@@ -8,11 +8,6 @@
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
           {{ site.description }}
         </li>
-        {% if site.developer %}
-        <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
-          Developer: <a class="link footer__link" href="{{ '/authors/' | relative_url }}#{{ site.developer }}">{{ site.data.authors[site.developer].admission_year | slice: 2, 3 }}{{ site.data.authors[site.developer].name }}</a> (<a class="link footer__link" href="mailto:{{ site.data.authors[site.developer].email }}">{{ site.data.authors[site.developer].email }}</a>)
-        </li>
-        {% endif %}
       </ul>
       <ul class="list">
         {% if site.location %}
@@ -27,7 +22,7 @@
         {% endif %}
         {% if site.manager %}
         <li class="horizontal-item horizontal-item--dense footer__horizontal-item">
-          Manager: <a class="link footer__link" href="{{ '/authors/' | relative_url }}#{{ site.manager }}">{{ site.data.authors[site.manager].admission_year | slice: 2, 3 }}{{ site.data.authors[site.manager].name }}</a> (<a class="link footer__link" href="mailto:{{ site.data.authors[site.manager].email }}">{{ site.data.authors[site.manager].email }}</a>)
+          <a class="link footer__link" href="{{ '/authors/' | relative_url }}#{{ site.manager }}">{{ site.data.authors[site.manager].admission_year | slice: 2, 3 }}{{ site.data.authors[site.manager].name }}</a> (<a class="link footer__link" href="mailto:{{ site.data.authors[site.manager].email }}">{{ site.data.authors[site.manager].email }}</a>)
         </li>
         {% endif %}
       </ul>

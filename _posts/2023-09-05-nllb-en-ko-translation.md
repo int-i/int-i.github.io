@@ -1,9 +1,10 @@
 ---
-title: "NLLB-200 모델을 이용한 기계번역"
+title: "Meta에 항상 감사하십시오. NLLB-200 모델을 이용한 기계번역"
 date: 2023-09-05
 author: Astro36
 category: python
 tags: [python, ai, deep_learning, nlp, translation, nllb, huggingface, pipeline, meta, facebook]
+thumbnail: /assets/posts/2023-09-05-nllb-en-ko-translation/thumbnail.jpg
 ---
 
 [NLLB-200](https://ai.meta.com/research/no-language-left-behind/ko/)은 Meta에서 개발한 **다국어 번역 모델**입니다.
@@ -49,7 +50,8 @@ $ pip install transformers
 
 ```py
 from transformers import pipeline
-translator = pipeline('translation', model= facebook/nllb-200-distilled-600M ', device=0, src_lang='eng_Latn', tgt_lang='kor_Hang', max_length=512)
+
+translator = pipeline('translation', model='facebook/nllb-200-distilled-600M', device=0, src_lang='eng_Latn', tgt_lang='kor_Hang', max_length=512)
 ```
 
 `device=0`으로 설정한 이유는 CPU가 아니라 **GPU를 이용**해서 모델을 실행시키기 위함입니다.
@@ -61,13 +63,13 @@ translator = pipeline('translation', model= facebook/nllb-200-distilled-600M ', 
 실행은 아래와 같이 하면 됩니다.
 
 ```py
-text = ‘Lockheed Martin Delivers Initial 5G Testbed To U.S. Marine Corps And Begins Mobile Network Experimentation’
+text = 'Lockheed Martin Delivers Initial 5G Testbed To U.S. Marine Corps And Begins Mobile Network Experimentation'
 output = translator(text, max_length=512)
 print(output[0]['translation_text'])
 ```
 
 ```txt
-록히드 마틴, 미 해병대에 초기 5G 테스트베드 제공 및 모바일 네트워크 실험 시작
+로크히드 마틴은 미국 해병대에 첫 번째 5G 테스트 베드를 공급하고 모바일 네트워크 실험을 시작했습니다
 ```
 
 번역이 자연스럽지 않다면, **더 큰 모델**(1.3B, 3.3B)을 이용해서 테스트해보세요. 일반적으로 **모델의 사이즈**가 클수록 번역이 자연스러워지지만 **많은 리소스**를 사용합니다.
@@ -90,13 +92,14 @@ print(output[0]['translation_text'])
 
 ```py
 translator = pipeline('translation', model='NHNDQ/nllb-finetuned-en2ko', device=0, src_lang='eng_Latn', tgt_lang='kor_Hang', max_length=512)
-text = ‘Lockheed Martin Delivers Initial 5G Testbed To U.S. Marine Corps And Begins Mobile Network Experimentation’
+
+text = 'Lockheed Martin Delivers Initial 5G Testbed To U.S. Marine Corps And Begins Mobile Network Experimentation'
 output = translator(text, max_length=512)
 print(output[0]['translation_text'])
 ```
 
 ```txt
-록히드 마틴, 미 해병대에 초기 5G 테스트베드 제공 및 모바일 네트워크 실험 시작
+록히드마틴이 미국 해병대에 최초 5G 테스트베드를 전달하고 모바일 네트워크 실험에 나선다
 ```
 
 아까보다 더 자연스러운 문장이 생성된 것 같습니다.

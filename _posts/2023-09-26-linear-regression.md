@@ -1,9 +1,10 @@
 ---
-title: "단순 선형 회귀 공식의 유도와 R 프로그래밍"
+title: "이 직선... 내 점들이 다 담아질까...? 단순 선형 회귀식 유도와 R 프로그래밍"
 date: 2023-09-26
 author: Astro36
 category: r
 tags: [r, math, linear_regression, machine_learning]
+thumbnail: /assets/posts/2023-09-26-linear-regression/thumbnail.jpg
 ---
 
 **회귀 분석**은 두 변수 사이의 관계를 설명하거나 예측하는 **통계적 방법**입니다.
@@ -148,9 +149,13 @@ $$b_2=\frac{\sum x_i y_i-\bar{y}\sum x_i}{\sum x_i^2-\bar{x}\sum x_i}=\frac{\sum
 2. $$\sum x_i(y_i-\bar{y})$$도 $$\sum (x_i-\bar{x})(y_i-\bar{y})$$와 **동일**합니다.
 
 > **증명**
-> 
-> $$\sum(x_i-\bar{x})=\sum x_i-\sum\bar{x}=n\bar{x}-n\bar{x}=0$$이기 때문에,
 >
+> 잔차($$=x_i-\bar{x}$$)의 합은 **항상 0**입니다.
+> 
+> $$\sum(x_i-\bar{x})=\sum x_i-\sum\bar{x}=n\bar{x}-n\bar{x}=0$$
+>
+> $$\sum(x_i-\bar{x})=0$$이면,
+> 
 > $$\bar{x}\sum(x_i-\bar{x})=0$$이고,
 > 
 > $$\sum x_i(x_i-\bar{x})=\sum x_i(x_i-\bar{x})-0=\sum x_i(x_i-\bar{x})-\bar{x}\sum(x_i-\bar{x})$$
@@ -163,7 +168,9 @@ $$b_2=\frac{\sum x_i y_i-\bar{y}\sum x_i}{\sum x_i^2-\bar{x}\sum x_i}=\frac{\sum
 >
 > $$\sum x_i(x_i-\bar{x})=\sum (x_i-\bar{x})^2\quad\cdots(4)$$
 > 
-> 마찬가지로, $$\sum(y_i-\bar{y})=\sum y_i-\sum\bar{y}=n\bar{y}-n\bar{y}=0$$이기 때문에,
+> 마찬가지로,
+> 
+> $$\sum(y_i-\bar{y})=\sum y_i-\sum\bar{y}=n\bar{y}-n\bar{y}=0$$이기 때문에,
 > 
 > $$\bar{x}\sum(y_i-\bar{y})=0$$이고,
 > 
@@ -191,7 +198,7 @@ ym <- mean(y)
 $$b_2=\frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{\sum(x_i-\bar{x})^2}$$
 
 ```r
-sxy <- sum((x - xm) * (y - ym))
+sxy <- sum((x - xm)*(y - ym))
 sxx <- sum((x - xm)^2)
 b2 <- sxy / sxx
 ```
@@ -201,13 +208,13 @@ $$b_1$$과 단순 선형 회귀 모델은 아래와 같습니다.
 $$b_1=\bar{y}-b_2\bar{x}$$
 
 ```r
-b1 <- ym - b2 * xm
+b1 <- ym - b2*xm
 ```
 
 $$\hat{y_i}=b_1+b_2 x_i$$
 
 ```r
-b1 + b2 * xm
+b1 + b2*xm
 ```
 
 ### 알고리즘 최적화
@@ -229,7 +236,7 @@ $$\sum x_i y_i-\sum\bar{x}y_i-\sum x_i\bar{y}+\sum\bar{x}\bar{y}=\sum x_i y_i-n\
 $$\sum(x_i-\bar{x})(y_i-\bar{y})=\sum x_i y_i-n\bar{x}\bar{y}$$
 
 ```r
-sxy <- sum(x * y) - n * xm * ym
+sxy <- sum(x*y) - n*xm*ym
 ```
 
 `sxx`도 같은 방식으로 구할 수 있습니다.
@@ -245,7 +252,7 @@ $$\sum x_i^2-2\sum x_i\bar{x}+\sum \bar{x}^2=\sum x_i^2-2n\bar{x}^2+n\bar{x}^2$$
 $$\sum(x_i-\bar{x})^2=\sum x_i^2-n\bar{x}^2$$
 
 ```r
-sxx <- sum(x^2) - n * xm^2
+sxx <- sum(x^2) - n*xm^2
 ```
 
 최종적으로 코드를 정리하면 아래와 같습니다.
@@ -254,11 +261,11 @@ sxx <- sum(x^2) - n * xm^2
 xm <- mean(x)
 ym <- mean(y)
 
-sxy <- sum(x * y) - n * xm * ym
-sxx <- sum(x^2) - n * xm^2
+sxy <- sum(x*y) - n*xm*ym
+sxx <- sum(x^2) - n*xm^2
 b2 <- sxy / sxx
 
-b1 <- ym - b2 * xm
+b1 <- ym - b2*xm
 
-b1 + b2 * xm
+b1 + b2*xm
 ```

@@ -1,9 +1,10 @@
 ---
-title: "최소 제곱 추정량의 기댓값과 분산"
+title: "최소 제곱 추정량의 기댓값과 분산 증명"
 date: 2023-10-05
 author: Astro36
 category: r
 tags: [r, math, linear_regression, machine_learning, variance]
+thumbnail: /assets/posts/2023-10-05-linear-regression-variance/thumbnail.jpg
 ---
 
 **선형 회귀 분석**은 직선 형태의 **단순 회귀 함수**를 통해 두 변수 사이의 관계를 설명하거나 예측하는 **통계적 방법**으로,

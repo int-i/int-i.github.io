@@ -121,6 +121,8 @@ prices.rename(columns=ticker_names, inplace=True)
 
 ### 자본 자산 가격결정 모형(CAPM; Capital asset pricing model)
 
+> **개별 종목의 기대수익률**은 **시장 전체 수익률**의 흐름에 영향을 받는다.
+
 **CAPM**은 기업의 가치를 계산하거나 자산에 대한 투자 결정을 보조할 때 가장 많이 사용되는 재무 모델로,
 
 해리 마코위츠가 창안한 현대 포트폴리오 이론을 기반으로 하는 **재무가치 평가 모델**입니다.
@@ -132,7 +134,11 @@ $$R_i=R_f+\beta_i(E(R_m)-R_f)$$
 - $$R_m$$: 시장 수익률
 - $$\beta_i$$: 베타(위험자산의 민감도)
 
-> 베타는 특정 자산의 **체계적 위험**을 측정해주는 지표입니다.
+여기서 **베타**는 특정 자산의 **체계적 위험**을 측정해주는 지표입니다.
+
+CAPM에서는 개별 종목의 **기대수익률**은 개별 종목의 **위험에 비례**하며,
+
+따라서 **베타**를 통해 **개별 종목의 흐름을 예측**할 수 있다고 주장합니다.
 
 ```py
 from pypfopt import expected_returns
@@ -182,7 +188,9 @@ plt.xticks(rotation=90)
 
 ### 효율적 프론티어(Efficient Frontier)
 
-주어진 위험 수준에 비춰 가장 높은 수익률을 제공하는 포트폴리오를 **효율적 포트폴리오**라고 부릅니다.
+> 투자 대상 중 **가장 적절한 수익률과 위험**(변동성)을 가진 종목을 이은 곡선
+
+**주어진 위험 수준**에 비춰 **가장 높은 수익률**을 제공하는 포트폴리오를 **효율적 포트폴리오**라고 부릅니다.
 
 현대 포트폴리오 이론에서 **위험**은 **수익률의 변동성**으로 정의됩니다.
 
@@ -191,7 +199,6 @@ plt.xticks(rotation=90)
 자산의 수익률이 평균으로부터 많이 움직일수록, 얻게 되는 수익률의 범위가 커지기 때문에 위험이 크다고 할 수 있습니다.
 
 **효율적 프론티어**는 **동일한 기대 수익률** 내에서 **가장 작은 위험을 가진 포트폴리오**의 집합입니다.
-
 
 ```py
 import matplotlib.pyplot as plt
@@ -319,3 +326,5 @@ $$Sharpe=\frac{R_p-R_f}{\sigma_p}$$
 3. **코스닥은 코스피의 하위호환** 포트폴리오지만, 분산투자 효과로 인해 대부분의 개별주보다는 나은 선택이다.
 
 참고: [Mean-variance optimization](https://github.com/robertmartin8/PyPortfolioOpt/blob/master/cookbook/2-Mean-Variance-Optimisation.ipynb)
+
+참고: [CAPM과 3 Factor Model의 역사 및 중요 용어 되짚기](https://mech-literacy.tistory.com/90)

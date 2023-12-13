@@ -119,13 +119,13 @@ prices.rename(columns=ticker_names, inplace=True)
 [*********************100%%**********************]  46 of 46 completed
 ```
 
-### 자본 자산 가격결정 모형(CAPM; Capital asset pricing model)
+### 자본 자산 가격결정 모형(CAPM; Capital Asset Pricing Model)
 
 > **개별 종목의 기대수익률**은 **시장 전체 수익률**의 흐름에 영향을 받는다.
 
 **CAPM**은 기업의 가치를 계산하거나 자산에 대한 투자 결정을 보조할 때 가장 많이 사용되는 재무 모델로,
 
-해리 마코위츠가 창안한 현대 포트폴리오 이론을 기반으로 하는 **재무가치 평가 모델**입니다.
+**해리 마코위츠**가 창안한 현대 포트폴리오 이론을 기반으로 하는 **재무가치 평가 모델**입니다.
 
 $$R_i=R_f+\beta_i(E(R_m)-R_f)$$
 
@@ -136,9 +136,45 @@ $$R_i=R_f+\beta_i(E(R_m)-R_f)$$
 
 여기서 **베타**는 특정 자산의 **체계적 위험**을 측정해주는 지표입니다.
 
+$$\beta_i=\frac{Cov(R_i,R_m)}{Var(R_m)}$$
+
+> $$\beta_i$$는 **선형 회귀식**을 통해서 **유도**할 수 있습니다.
+>
+> CAPM에서는 각 자산의 **초과수익률**을 아래와 같이 표현합니다. (위의 CAPM 식에서 $$R_f$$를 단순히 좌변으로 이동)
+>
+> $$R_i-R_f=\beta_i(E(R_m)-R_f)$$
+>
+> 위 식은 아래와 같은 형태로 나타낼 수 있습니다. ($$y_t=R_i-R_f$$, $$x_t=E(R_m)-R_f$$)
+> 
+> $$\hat{y_t}=\beta_i x_t$$
+> 
+> $$\hat{e_t}=y_t-\beta_i x_t$$
+>
+> **최소 제곱 원칙**(Least Squares Principle)을 통해 $$\beta_i$$를 추정합니다.
+>
+> $$SSE=\min{\sum{\hat{e_t}^2}}=\min{\sum{(y_t-\beta_i x_t)^2}}$$
+>
+> $$\frac{\partial\sum{(y_t-\beta_i x_t)^2}}{\partial\beta_i}=\frac{\partial(\sum{y_t^2-2\beta_i\sum{x_t y_t}+\beta_i^2\sum{x_t^2}})}{\partial\beta_i}=-2\sum{x_t y_t}+2\beta_i\sum{x_t^2}=0$$
+>
+> $$\beta_i=\frac{\sum{x_t y_t}}{\sum{x_t^2}}$$
+>
+> 여기서, 분자와 분모를 $$n$$으로 나눠줍니다.
+>
+> $$\beta_i=\frac{\frac{\sum{x_t y_t}}{n}}{\frac{\sum{x_t^2}}{n}}$$
+>
+> $$x_t$$와 $$y_t$$는 각각 시장과 자산의 초과수익률을 의미하므로, CAPM에서 $$E(x_t)=E(y_t)=0$$입니다.
+>
+> $$Cov(R_i,R_m)=\frac{\sum{(x_t-E(x_t))(y_t-E(y_t))}}{n}=\frac{\sum{x_t y_t}}{n}$$
+>
+> $$Var(R_m)=\frac{\sum{(x_t-E(x_t))^2}}{n}=\frac{\sum{x_t^2}}{n}$$
+>
+> $$\therefore\beta_i=\frac{\frac{\sum{x_t y_t}}{n}}{\frac{\sum{x_t^2}}{n}}=\frac{Cov(R_i,R_m)}{Var(R_m)}$$
+> 
+> 참고: [이 직선... 내 점들이 다 담아질까...? 단순 선형 회귀식 유도와 R 프로그래밍](https://int-i.github.io/r/2023-09-26/linear-regression/)
+
 CAPM에서는 개별 종목의 **기대수익률**은 개별 종목의 **위험에 비례**하며,
 
-따라서 **베타**를 통해 **개별 종목의 흐름을 예측**할 수 있다고 주장합니다.
+따라서 과거의 **베타**를 통해 **개별 종목의 흐름을 예측**할 수 있다고 주장합니다.
 
 ```py
 from pypfopt import expected_returns
@@ -200,6 +236,12 @@ plt.xticks(rotation=90)
 
 **효율적 프론티어**는 **동일한 기대 수익률** 내에서 **가장 작은 위험을 가진 포트폴리오**의 집합입니다.
 
+일반적으로 개별 종목의 **기대수익률**은 개별 종목의 **위험에 비례**하며 커지는데,
+
+그 중에서도, 특히나 **기대수익률 대비 위험**이 큰 종목도 있고 낮은 종목도 있기 마련입니다.
+
+효율적 프론티어란 **동일한 위험**에서 **가장 높은 수익률**을 기대할 수 있는 종목들을 선으로 이은 것이라고 생각하면 됩니다.
+
 ```py
 import matplotlib.pyplot as plt
 from pypfopt import plotting
@@ -250,7 +292,7 @@ Sharpe Ratio: 0.05
 
 효율적 프론티어 우측 끝 단에 코스피 지수가 위치합니다.
 
-**코스닥**은 코스피보다 **위험은 크고 기대 수익률은 낮은 결과**를 보였습니다.
+**코스닥**은 **코스피**보다 **위험은 크고 기대 수익률은 낮은 결과**를 보였습니다.
 
 ```py
 fig, ax = plt.subplots(figsize=(5, 10))

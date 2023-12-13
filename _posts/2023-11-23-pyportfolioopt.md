@@ -168,7 +168,7 @@ $$\beta_i=\frac{Cov(R_i,R_m)}{Var(R_m)}$$
 >
 > $$Var(R_m)=\frac{\sum{(x_t-E(x_t))^2}}{n}=\frac{\sum{x_t^2}}{n}$$
 >
-> $$\therefore\beta_i=\frac{\frac{\sum{x_t y_t}}{n}}{\frac{\sum{x_t^2}}{n}}=\frac{Cov(R_i,R_m)}{Var(R_m)}$$
+> $$\beta_i=\frac{\frac{\sum{x_t y_t}}{n}}{\frac{\sum{x_t^2}}{n}}=\frac{Cov(R_i,R_m)}{Var(R_m)}$$
 > 
 > 참고: [이 직선... 내 점들이 다 담아질까...? 단순 선형 회귀식 유도와 R 프로그래밍](https://int-i.github.io/r/2023-09-26/linear-regression/)
 

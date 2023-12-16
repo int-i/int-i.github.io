@@ -249,6 +249,7 @@ print(w_mv, 1-w_mv)
 ```py
 plt.plot(sigma_w, mu_w, zorder=-1)
 plt.scatter([sigma_1, sigma_2], [mu_1, mu_2])
+plt.scatter([sigma_mv], [mu_mv])
 plt.xlabel('risks')
 plt.ylabel('returns')
 ```

@@ -17,7 +17,7 @@ thumbnail: /assets/posts/2023-12-13-portfolio-mvo/thumbnail.jpg
 
 ## 평균-분산 모형
 
-**평균-분산 모형**은 개별 투자 종목의 **기대수익률과 위험**을 **평균과 분산**으로 정의하는 **계량 모형**입니다.
+**평균-분산 모형**은 개별 투자 종목의 **기대수익률과 위험**을 **평균($$\mu$$)과 분산($$\sigma^2$$)**으로 정의하는 **계량 모형**입니다.
 
 마코위츠는 **분산투자**의 수학적 방식인 **최적화 함수**를 제시함으로써 **현대 포트폴리오 이론**의 중요한 근간을 제공하고, 그 공로로 **1991년 노벨 경제학상**을 받았습니다.
 
@@ -35,21 +35,19 @@ thumbnail: /assets/posts/2023-12-13-portfolio-mvo/thumbnail.jpg
 
 가중치만큼 각 종목의 기대수익률을 더하면 됩니다.
 
-$$E(R_p)=w_1 E(R_1)+w_2 E(R_2)$$
+$$\mu_p=E(R_p)=w_1 E(R_1)+w_2 E(R_2)$$
 
 이때, $$w_1+w_2=1$$
 
 ### 일반화(n개의 종목)
 
-$$E(R_p)=\sum{w_i E(R_i)}$$
+$$\mu_p=E(R_p)=\sum{w_i E(R_i)}$$
 
 이때, $$\sum{w_i}=1$$
 
 ## 포트폴리오 수익률의 분산
 
-포트폴리오 수익률의 분산은 포트폴리오의 **수익률 변동**의 정도를 나타내는 지표로,
-
-**분산이 클수록 위험이 크다**고 볼 수 있다.
+포트폴리오 수익률의 분산은 포트폴리오의 **수익률 변동**의 정도를 나타내는 지표로, **분산이 클수록 위험이 크다**고 볼 수 있다.
 
 먼저, 분산의 정의를 이용합니다.
 
@@ -262,27 +260,23 @@ plt.ylabel('returns')
 
 $$\sigma_p^2=w^T\Sigma w\quad\cdots(3)$$
 
-따라서, **최소-분산 포트폴리오**는 분산 $$W^T\Sigma w$$를 최소로 만드는 $$w$$를 찾으면 됩니다.
+따라서, **최소-분산 포트폴리오**는 분산 $$w^T\Sigma w$$를 최소로 만드는 $$w$$를 찾으면 됩니다.
 
 $$\min_{w}{\sigma_p^2}=\min_{w}{w^T\Sigma w}$$
 
-일반적으로 최소-분산 포트폴리오의 **제약조건**은 아래와 같습니다.
+$$w$$의 **제약조건**으로 **비중의 합이 100%**가 되게 합니다.
 
-$$\text{s.t. }\sum{w_i E(R_i)}=E(R_p)$$
-
-$$\sum{w_i}=1$$
+$$\text{s.t. }\sum{w_i}=1$$
 
 **행렬 표현**으로 바꾸면 다음과 같습니다.
 
-$$\text{s.t. }w^T E(R_i)=E(R_p)$$
+$$\text{s.t. }w^T \iota=1$$
 
-$$w^T \iota=1$$
-
-> 여기서 $$\iota\text{(iota)}=[1,1,1,\cdots,1]^T$$입니다.
+> 여기서 $$\iota$$(iota)는 모두 1로 이루어진 벡터(=$$[1,1,1,\cdots,1]^T$$)입니다.
 
 **라그랑주 승수법**(Lagrange Multiplier Method)를 이용해 풀어줍니다.
 
-$$L(w,\lambda_1,\lambda_2)=\frac{1}{2}w^T\Sigma w-\lambda_1(w^T E(R_i)-E(R_p))-\lambda_2(w^T 1-1)$$
+$$L(w,\lambda)=\frac{1}{2}w^T\Sigma w+\lambda(w^T \iota-1)$$
 
 > $$w^T\Sigma w$$ 앞에 $$\frac{1}{2}$$을 붙인 이유는 미분할 때 식을 깔끔하게 만들기 위함입니다.
 >
@@ -296,63 +290,56 @@ $$L(w,\lambda_1,\lambda_2)=\frac{1}{2}w^T\Sigma w-\lambda_1(w^T E(R_i)-E(R_p))-\
 >
 > $$\frac{\partial(\frac{1}{2}w^T\Sigma w)}{\partial w}=\Sigma w$$
 
-계속해서 풀어줍니다.
+**KKT**(Karush-Kuhn-Tucker) 조건을 이용해 계속 풀어줍니다.
 
-$$\frac{\partial L}{\partial w}=\Sigma w-\lambda_1 E(R_p)-\lambda_2\iota=0$$
+$$\frac{\partial L}{\partial w}=\Sigma w+\lambda\iota=0$$
 
-$$\frac{\partial L}{\partial \lambda_1}=w^T E(R_i)-E(R_p)=0$$
-
-$$\frac{\partial L}{\partial \lambda_2}=1-w^T\iota=0$$
-
-정리하면,
-
-$$\Sigma w-\lambda_1 E(R_p)-\lambda_2\iota=0\quad\cdots(5)$$
-
-$$w^T E(R_i)=E(R_p)\quad\cdots(6)$$
-
-$$w^T\iota=1\quad\cdots(7)$$
-
-여기서 필요한 건 **전역에서 분산이 최소**가 되는 포트폴리오이므로,
-
-**수익률에 대한 제약조건**을 지우기 위해 (5)식의 $$\lambda_1$$에 $$0$$을 대입합니다.
-
-$$\Sigma w-0-\lambda_2\iota=0$$
-
-$$\Sigma w=\lambda_2\iota$$
+$$\Sigma w=-\lambda\iota$$
 
 양변에 $$\Sigma^{-1}$$를 곱해주면,
 
-$$w=\lambda_2\Sigma^{-1}\iota\quad\cdots(8)$$
+$$w=-\lambda\Sigma^{-1}\iota\quad\cdots(5)$$
 
-마지막으로 (7)식을 만족하도록 $$\lambda_2$$를 조정해야 합니다.
+이제 $$\lambda$$를 구합니다.
+
+$$w^T \iota=1$$는 아래와 같이 표현할 수 있습니다.
+
+$$\iota^T w=1$$
+
+(5)식과 연립하여 $$w$$를 소거합니다.
+
+$$\iota^T(-\lambda\Sigma^{-1}\iota)=-\lambda\iota^T\Sigma^{-1}\iota=1$$
+
+$$-\lambda=\frac{1}{\iota^T\Sigma^{-1}\iota}$$
+
+정리하면,
+
+$$w=\frac{1}{\iota^T\Sigma^{-1}\iota}\Sigma^{-1}\iota\quad\cdots(6)$$
+
+참고: [Karush-Kuhn-Tucker, KKT 카루시-쿤-터커 조건](https://nstgic3.tistory.com/entry/Optimaization-Karush-Kuhn-Tucker-KKT-%EC%B9%B4%EB%A3%A8%EC%8B%9C-%EC%BF%A4-%ED%84%B0%EC%BB%A4-%EC%A1%B0%EA%B1%B4)
 
 ### 실습(n개의 종목)
 
-파이썬으로 (8)식을 표현하면 다음과 같습니다.
+파이썬으로 (6)식을 표현하면 다음과 같습니다.
 
-$$w=\lambda_2\Sigma^{-1}\iota\quad\cdots(8)$$
-
-```py
-w_mv5 = np.linalg.inv(cov) @ np.ones(len(mu))
-```
-
-```txt
-[3.0415825 3.02988081 10.44795403 3.69413479 0.42902035]
-```
-
-> `@`는 NumPy에서 **행렬 곱**으로 정의된 연산자입니다.
-
-(7)식을 만족하도록 `w_mv5`를 조정합니다.
-
-$$w^T\iota=1\quad\cdots(7)$$
+$$w=\frac{1}{\iota^T\Sigma^{-1}\iota}\Sigma^{-1}\iota\quad\cdots(6)$$
 
 ```py
-w_mv5 = w_mv5 / w_mv5.sum()
+iota = np.ones(len(mu))
+cov_inv = np.linalg.inv(cov)
+w_mv5 = (cov_inv @ iota) / (iota.T @ cov_inv @ iota)
 ```
 
 ```txt
 [0.14734513 0.14677826 0.50613624 0.17895709 0.02078328]
 ```
+
+> 제약조건이 간단하여 $$\sum{w_i}=1$$만 맞춰주면 되기에 $$\lambda$$를 직접 계산하는 대신, 아래와 같이 $$w$$를 구하는 방법도 있습니다.
+> 
+> ```py
+> w_mv5 = np.linalg.inv(cov) @ np.ones(len(mu))
+> w_mv5 = w_mv5 / w_mv5.sum()
+> ```
 
 - `삼성전자`: 14.7%
 - `현대차`: 14.7%
@@ -360,11 +347,11 @@ w_mv5 = w_mv5 / w_mv5.sum()
 - `POSCO홀딩스`: 17.9%
 - `LG화학`: 2.1%
 
-최소-분산일 때의 포트폴리오 **수익률과 분산**을 구합니다.
+최소-분산일 때의 포트폴리오 **기대수익률과 분산**을 구합니다.
 
-$$E(R_p)=w^T E(R_i)\quad\cdots(6)$$
+$$\mu_p=w^T\mu$$
 
-$$\sigma_p^2=w^T\Sigma w\quad\cdots(3)$$
+$$\sigma_p^2=w^T\Sigma w$$
 
 ```py
 mu_mv5 = w_mv5.T @ mu
@@ -403,9 +390,7 @@ plt.ylabel('returns')
 
 $$\min_{w}{w^T\Sigma w}$$
 
-$$\text{s.t. }\sum{w_i E(R_i)}=E(R_p)$$
-
-$$\sum{w_i}=1$$
+$$\text{s.t. }\sum{w_i}=1$$
 
 $$w_i\geq 0.05$$
 
@@ -437,7 +422,7 @@ $ pip install cvxpy
 
 **2차 계획법**(QP)는 **목적 함수**(Objective Function)가 **이차식**(Convex Quadratic)이고,
 
-**제약 함수**(Constraint Functions)가 모두 **Affine**인 볼록 최적화 문제를 말합니다.
+**제약 함수**(Constraint Functions)가 모두 **Affine**인 **볼록 최적화 문제**를 말합니다.
 
 > **General Quadratic Program**은 다음과 같은 형태로 표현될 수 있습니다.
 > 

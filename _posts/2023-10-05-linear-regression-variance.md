@@ -49,7 +49,7 @@ $$y_i$$ 자리에 $$\beta_1+\beta_2 x_i+e_i$$를 **대입**합니다.
 
 $$b_2=\sum w_i y_i=\sum w_i(\beta_1+\beta_2 x_i+e_i)$$
 
-$$=\beta_1\sum w_i+\beta_2 \sum w_i x_i+\sum w_i e_i)$$
+$$=\beta_1\sum w_i+\beta_2 \sum w_i x_i+\sum w_i e_i$$
 
 $$\sum w_i=0$$과 $$\sum w_i x_i=1$$를 이용해서 식을 **정리**합니다.
 
@@ -69,7 +69,7 @@ $$\sum w_i=0$$과 $$\sum w_i x_i=1$$를 이용해서 식을 **정리**합니다.
 > 
 > $$\sum w_i x_i=\frac{\sum(x_i-\bar{x})^2}{\sum(x_i-\bar{x})^2}=1$$
 
-$$b_2=\beta_1\sum w_i+\beta_2 \sum w_i x_i+\sum w_i e_i)=\beta_2+\sum w_i e_i\quad\cdots(3)$$
+$$b_2=\beta_1\sum w_i+\beta_2 \sum w_i x_i+\sum w_i e_i=\beta_2+\sum w_i e_i\quad\cdots(3)$$
 
 ## 추정량 $$b_1$$
 
@@ -91,11 +91,31 @@ $$v_i=\frac{1}{N}-\bar{x}w_i=\frac{1}{N}-\frac{\bar{x}(x_i-\bar{x})}{\sum(x_i-\b
 
 (4)식 $$y_i$$ 자리에 $$\beta_1+\beta_2 x_i+e_i$$를 넣고 전개하면 $$b_2$$와 같이,
 
-$$b_1=\beta_1+\sum v_i e_i\quad\cdots(6)$$
+$$b_1=\sum v_i y_i=\sum v_i(\beta_1+\beta_2 x_i+e_i)$$
+
+$$=\beta_1\sum v_i+\beta_2 \sum v_i x_i+\sum v_i e_i$$
+
+$$=\beta_1+\sum v_i e_i\quad\cdots(6)$$
 
 형태로 정리됩니다.
 
-이때, $$v_i$$는 $$\sum v_i=0$$, $$\sum v_i x_i=1$$를 만족합니다.
+이때, $$v_i$$는 $$\sum v_i=1$$, $$\sum v_i x_i=0$$를 만족합니다.
+
+> **증명 3**
+>
+> $$\sum v_i=\sum(\frac{1}{N}-\frac{\bar{x}(x_i-\bar{x})}{\sum(x_i-\bar{x})^2})=1-\frac{\bar{x}}{\sum(x_i-\bar{x})^2}\sum(x_i-\bar{x})$$
+>
+> $$\sum(x_i-\bar{x})=0$$이므로,
+>
+> $$\sum v_i=1-\frac{\bar{x}}{\sum(x_i-\bar{x})^2}\times 0=1$$
+
+> **증명 4**
+>
+> $$\sum v_i x_i=\sum(\frac{1}{N}-\frac{\bar{x}(x_i-\bar{x})}{\sum(x_i-\bar{x})^2})x_i=\sum(\frac{x_i}{N}-\frac{\bar{x}(x_i-\bar{x})x_i}{\sum(x_i-\bar{x})^2})=\bar{x}-\frac{\bar{x}\sum(x_i-\bar{x})x_i}{\sum(x_i-\bar{x})^2}$$
+> 
+> $$\sum(x_i-\bar{x})x_i=\sum(x_i-\bar{x})^2$$이므로,
+> 
+> $$\sum v_i x_i=\bar{x}-\frac{\bar{x}\sum(x_i-\bar{x})^2}{\sum(x_i-\bar{x})^2}=0$$
 
 ## $$b_2$$의 기댓값
 

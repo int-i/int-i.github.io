@@ -99,13 +99,13 @@ $$=\sum\sum{w_i w_j\mathrm{Cov}(R_i,R_j)}$$
 
 **공분산 행렬**은 아래와 같이 정의됩니다.
 
-$$\Sigma=\mathrm{Cov}(X,X)=E[(X-E(X))(X-E(X))^T]$$
+$$\mathbf{\Sigma}=\mathrm{Cov}(X,X)=E[(X-E(X))(X-E(X))^\mathsf{T}]$$
 
-> 여기서 $$\Sigma$$(시그마)는 합 연산이 아니라 **공분산 행렬**을 나타내는 기호입니다.
+> 여기서 $$\mathbf{\Sigma}$$(시그마)는 합 연산이 아니라 **공분산 행렬**을 나타내는 기호입니다.
 
 $$\sigma_p^2$$를 **행렬 표현**으로 변환합니다.
 
-$$\sigma_p^2=\sum\sum{w_i w_j\mathrm{Cov}(R_i,R_j)}=w^T\Sigma w\quad\cdots(3)$$
+$$\sigma_p^2=\sum\sum{w_i w_j\mathrm{Cov}(R_i,R_j)}=\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}\quad\cdots(3)$$
 
 > **(TMI) 분산투자의 효과**
 >
@@ -258,63 +258,65 @@ plt.ylabel('returns')
 
 (3)식에서 **일반화**된 포트폴리오 수익률의 분산을 구했습니다.
 
-$$\sigma_p^2=w^T\Sigma w\quad\cdots(3)$$
+$$\sigma_p^2=\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}\quad\cdots(3)$$
 
-따라서, **최소-분산 포트폴리오**는 분산 $$w^T\Sigma w$$를 최소로 만드는 $$w$$를 찾으면 됩니다.
+따라서, **최소-분산 포트폴리오**는 분산 $$\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}$$를 최소로 만드는 $$\mathbf{w}$$를 찾으면 됩니다.
 
-$$\min_{w}{\sigma_p^2}=\min_{w}{w^T\Sigma w}$$
+$$\min_{\mathbf{w}}{\sigma_p^2}=\min_{\mathbf{w}}{\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}$$
 
-$$w$$의 **제약조건**으로 **비중의 합이 100%**가 되게 합니다.
+$$\mathbf{w}$$의 **제약조건**으로 **비중의 합이 100%**가 되게 합니다.
 
 $$\text{s.t. }\sum{w_i}=1$$
 
 **행렬 표현**으로 바꾸면 다음과 같습니다.
 
-$$\text{s.t. }w^T \iota=1$$
+$$\text{s.t. }\mathbf{w}^\mathsf{T}\mathbf{1}=1$$
 
-> 여기서 $$\iota$$(iota)는 모두 1로 이루어진 벡터(=$$[1,1,1,\cdots,1]^T$$)입니다.
+> 여기서 $$\mathbf{1}$$는 모두 1로 이루어진 벡터(=$$[1,1,1,\cdots,1]^\mathsf{T}$$)입니다.
+>
+> 수학에서 **벡터**와 **행렬**은 관행적으로 **굵은 글자**로 표기합니다. 
 
 **라그랑주 승수법**(Lagrange Multiplier Method)를 이용해 풀어줍니다.
 
-$$L(w,\lambda)=\frac{1}{2}w^T\Sigma w+\lambda(w^T \iota-1)$$
+$$L(\mathbf{w},\lambda)=\frac{1}{2}\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}+\lambda(\mathbf{w}^\mathsf{T}\mathbf{1}-1)$$
 
-> $$w^T\Sigma w$$ 앞에 $$\frac{1}{2}$$을 붙인 이유는 미분할 때 식을 깔끔하게 만들기 위함입니다.
+> $$\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}$$ 앞에 $$\frac{1}{2}$$을 붙인 이유는 미분할 때 식을 깔끔하게 만들기 위함입니다.
 >
-> $$\Sigma$$는 **대칭 행렬**이므로,
+> $$\mathbf{\Sigma}$$는 **대칭 행렬**이므로,
 >
-> $$\Sigma=\Sigma^T$$
+> $$\mathbf{\Sigma}=\mathbf{\Sigma}^\mathsf{T}$$
 >
-> $$\frac{\partial w^T\Sigma w}{\partial w}=(\Sigma+\Sigma^T)w=2\Sigma w$$
+> $$\frac{\partial \mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}{\partial \mathbf{w}}=(\mathbf{\Sigma}+\mathbf{\Sigma}^\mathsf{T})\mathbf{w}=2\mathbf{\Sigma w}$$
 >
 > 앞에 $$\frac{1}{2}$$을 붙이게 되면,
 >
-> $$\frac{\partial(\frac{1}{2}w^T\Sigma w)}{\partial w}=\Sigma w$$
+> $$\frac{\partial(\frac{1}{2}\mathbf{w}^\mathsf{T}\mathbf{\Sigma w})}{\partial \mathbf{w}}=\mathbf{\Sigma w}$$
 
 **KKT**(Karush-Kuhn-Tucker) 조건을 이용해 계속 풀어줍니다.
 
-$$\frac{\partial L}{\partial w}=\Sigma w+\lambda\iota=0$$
+$$\frac{\partial L}{\partial \mathbf{w}}=\mathbf{\Sigma w}+\lambda\mathbf{1}=0$$
 
-$$\Sigma w=-\lambda\iota$$
+$$\mathbf{\Sigma w}=-\lambda\mathbf{1}$$
 
-양변에 $$\Sigma^{-1}$$를 곱해주면,
+양변에 $$\mathbf{\Sigma}^{-1}$$를 곱해주면,
 
-$$w=-\lambda\Sigma^{-1}\iota\quad\cdots(5)$$
+$$\mathbf{w}=-\lambda\mathbf{\Sigma}^{-1}\mathbf{1}\quad\cdots(5)$$
 
 이제 $$\lambda$$를 구합니다.
 
-$$w^T \iota=1$$는 아래와 같이 표현할 수 있습니다.
+$$\mathbf{w}^\mathsf{T}\mathbf{1}=1$$는 아래와 같이 표현할 수 있습니다.
 
-$$\iota^T w=1$$
+$$\mathbf{1}^\mathsf{T}\mathbf{w}=1$$
 
-(5)식과 연립하여 $$w$$를 소거합니다.
+(5)식과 연립하여 $$\mathbf{w}$$를 소거합니다.
 
-$$\iota^T(-\lambda\Sigma^{-1}\iota)=-\lambda\iota^T\Sigma^{-1}\iota=1$$
+$$\mathbf{1}^\mathsf{T}(-\lambda\mathbf{\Sigma}^{-1}\mathbf{1})=-\lambda\mathbf{1}^\mathsf{T}\mathbf{\Sigma}^{-1}\mathbf{1}=1$$
 
-$$-\lambda=\frac{1}{\iota^T\Sigma^{-1}\iota}$$
+$$-\lambda=\frac{1}{\mathbf{1}^\mathsf{T}\mathbf{\Sigma}^{-1}\mathbf{1}}$$
 
 정리하면,
 
-$$w=\frac{1}{\iota^T\Sigma^{-1}\iota}\Sigma^{-1}\iota\quad\cdots(6)$$
+$$\mathbf{w}=\frac{1}{\mathbf{1}^\mathsf{T}\mathbf{\Sigma}^{-1}\mathbf{1}}\mathbf{\Sigma}^{-1}\mathbf{1}\quad\cdots(6)$$
 
 참고: [Karush-Kuhn-Tucker, KKT 카루시-쿤-터커 조건](https://nstgic3.tistory.com/entry/Optimaization-Karush-Kuhn-Tucker-KKT-%EC%B9%B4%EB%A3%A8%EC%8B%9C-%EC%BF%A4-%ED%84%B0%EC%BB%A4-%EC%A1%B0%EA%B1%B4)
 
@@ -322,7 +324,7 @@ $$w=\frac{1}{\iota^T\Sigma^{-1}\iota}\Sigma^{-1}\iota\quad\cdots(6)$$
 
 파이썬으로 (6)식을 표현하면 다음과 같습니다.
 
-$$w=\frac{1}{\iota^T\Sigma^{-1}\iota}\Sigma^{-1}\iota\quad\cdots(6)$$
+$$\mathbf{w}=\frac{1}{\mathbf{1}^\mathsf{T}\mathbf{\Sigma}^{-1}\mathbf{1}}\mathbf{\Sigma}^{-1}\mathbf{1}\quad\cdots(6)$$
 
 ```py
 iota = np.ones(len(mu))
@@ -334,7 +336,7 @@ w_mv5 = (cov_inv @ iota) / (iota.T @ cov_inv @ iota)
 [0.14734513 0.14677826 0.50613624 0.17895709 0.02078328]
 ```
 
-> 제약조건이 간단하여 $$\sum{w_i}=1$$만 맞춰주면 되기에 $$\lambda$$를 직접 계산하는 대신, 아래와 같이 $$w$$를 구하는 방법도 있습니다.
+> 제약조건이 간단하여 $$\sum{w_i}=1$$만 맞춰주면 되기에 $$\lambda$$를 직접 계산하는 대신, 아래와 같이 $$\mathbf{w}$$를 구하는 방법도 있습니다.
 > 
 > ```py
 > w_mv5 = np.linalg.inv(cov) @ np.ones(len(mu))
@@ -349,9 +351,9 @@ w_mv5 = (cov_inv @ iota) / (iota.T @ cov_inv @ iota)
 
 최소-분산일 때의 포트폴리오 **기대수익률과 분산**을 구합니다.
 
-$$\mu_p=w^T\mu$$
+$$\mu_p=\mathbf{w}^\mathsf{T}\mathbf{\mu}$$
 
-$$\sigma_p^2=w^T\Sigma w$$
+$$\sigma_p^2=\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}$$
 
 ```py
 mu_mv5 = w_mv5.T @ mu
@@ -388,7 +390,7 @@ plt.ylabel('returns')
 
 그래서 현실에서는 이런 과최적화 문제를 해결하기 위해, **개별 종목에 비중 제한**을 두곤 합니다.
 
-$$\min_{w}{w^T\Sigma w}$$
+$$\min_{\mathbf{w}}{\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}$$
 
 $$\text{s.t. }\sum{w_i}=1$$
 
@@ -418,7 +420,7 @@ $ pip install cvxpy
 
 #### Quadratic Programming
 
-여기서 $$\min_{w}{w^T\Sigma w}$$는 **2차 계획법**(QP; **Quadratic Programming**) 문제로 보고, `cp.quad_form`를 이용해 해결할 수 있습니다.
+$$\min_{\mathbf{w}}{\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}$$는 **2차 계획법**(QP; **Quadratic Programming**) 문제로 보고 `cp.quad_form`를 이용해 해결할 수 있습니다.
 
 **2차 계획법**(QP)는 **목적 함수**(Objective Function)가 **이차식**(Convex Quadratic)이고,
 
@@ -426,19 +428,19 @@ $ pip install cvxpy
 
 > **General Quadratic Program**은 다음과 같은 형태로 표현될 수 있습니다.
 > 
-> $$\min_{x}{\frac{1}{2}x^T P x+q^T x}$$
+> $$\min_{x}{\frac{1}{2}x^\mathsf{T} P x+q^\mathsf{T} x}$$
 > 
 > $$\text{s.t. }Gx\leq h$$
 > 
 > $$Ax=b$$
 
-우리는 분산을 최소화하는 `w`를 찾아야 하므로,
+우리는 분산을 최소화하는 $$\mathbf{w}$$를 찾아야 하므로,
 
-**목적 함수**는 $$\frac{1}{2}w^T\Sigma w$$이고,
+**목적 함수**는 $$\frac{1}{2}\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}$$이고,
 
 **제약 함수**는 $$\sum{w_i}=1$$, $$w_i\geq 0.05$$, $$w_i\leq 0.4$$ 3개입니다.
 
-먼저 최소화할 `w`를 변수로 선언합니다.
+먼저 최소화할 $$\mathbf{w}$$를 변수로 선언합니다.
 
 ```py
 w = cp.Variable(len(mu))

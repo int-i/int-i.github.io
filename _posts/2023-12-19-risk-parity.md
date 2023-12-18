@@ -47,7 +47,7 @@ $$w_i=\frac{\frac{1}{\sigma_i}}{\sum_k{\frac{1}{\sigma_k}}}\quad\cdots(1)$$
 
 수학적으로는 아래와 같이 **미분**을 통해 정의됩니다.
 
-$$\text{MRC}_i=\frac{\partial \sigma_p}{\partial w_i}=\frac{1}{\sqrt{\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}}\mathbf{\Sigma w}$$
+$$\text{MRC}_i=\frac{\partial \sigma_p}{\partial w_i}=\frac{(\mathbf{\Sigma w})_i}{\sqrt{\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}}$$
 
 > **포트폴리오의 총 위험** $$\sigma_p$$는 아래와 같이 정의됩니다.
 >

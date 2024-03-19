@@ -1,14 +1,25 @@
 ---
-title: "내재 균형 수익률"
+title: "내재 균형 수익률: 시장아, 기대수익률 좀 구해줘"
 date: 2024-03-17
 author: Astro36
 category: python
-tags: [python, modern_portfolio_theory, black_litterman_model, optimization_problem, reverse_optimization]
+tags: [python, modern_portfolio_theory, black_litterman_model, implied_equilibrium_return, optimization_problem, reverse_optimization]
+thumbnail: /assets/posts/2024-03-17-implied-equilibrium-return/thumbnail.png
 ---
+
+**기대수익률**은 투자 결정에 중요한 역할을 하는 지표입니다.
+
+투자자들은 **기대수익률을 추정**하여 투자 대비 얻을 수 있는 수익을 예상하고 **투자 포트폴리오를 구성**합니다.
+
+기대수익률을 추정하는 방법은 다양하지만, 일반적으로 **역사적 수익률**을 분석하거나 배당 할인 모형(DDM) 등을 이용해 **내재 가치를 계산하고 시장 가치와 비교**하는 등을 사용합니다.
+
+하지만 기대수익률은 미래의 불확실성, 정보의 비대칭, 개별 자산의 특성 등의 요인으로 인해 정확하게 예측하기 어렵습니다.
+
+![optimal_portfolio](https://www.researchgate.net/publication/370036003/figure/fig1/AS:11431281152673937@1682101702285/Optimal-portfolio-formation-10.png)
 
 **내재 균형 수익률**(Implied Equilibrium Return)은 **블랙-리터먼 모델**(Black-Litterman Model)에서 사용되는 개념으로,
 
-금융 시장에서 **시장 참여자들이 예상**하는 **기대수익률**을 의미합니다.
+**시장 포트폴리오를 최적 포트폴리오**로 보고 **시장 참여자들이 예상**하는 기대수익률을 구한 것입니다.
 
 ## 계산 과정
 
@@ -24,7 +35,11 @@ tags: [python, modern_portfolio_theory, black_litterman_model, optimization_prob
 
 최적-위험 포트폴리오는 **기대수익률은 커지고 위험은 작아지도록** 하는 $$\mathbf{w}$$를 찾습니다.
 
-$$\max_{\mathbf{w}}{\mathbf{w}^\mathsf{T}E(r)-\lambda\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}$$
+$$\max_{\mathbf{w}}{\mathbf{w}^\mathsf{T}E(r)-\frac{\lambda}{2}\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}}$$
+
+> $$\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}$$를 $$\mathbf{w}$$로 미분하면 $$2\mathbf{\Sigma w}$$가 되기 때문에 계수 2를 지우기 위해 $$\frac{1}{2}$$을 곱한 형태를 사용합니다.
+>
+> 참고: [[응용 수학] 벡터(Vector) 미분은?](https://m.blog.naver.com/sw4r/221921854226)
 
 여기서 $$\lambda$$는 투자자의 **위험 회피성향**(Risk aversion)을 나타냅니다.
 
@@ -34,17 +49,17 @@ $$\max_{\mathbf{w}}{\mathbf{w}^\mathsf{T}E(r)-\lambda\mathbf{w}^\mathsf{T}\mathb
 
 ### 역최적화
 
-기울기가 0이 되는 지점에서 $$\mathbf{w}^\mathsf{T}E(r)-\lambda\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}$$는 최대가 됩니다.
+기울기가 0이 되는 지점에서 $$\mathbf{w}^\mathsf{T}E(r)-\frac{\lambda}{2}\mathbf{w}^\mathsf{T}\mathbf{\Sigma w}$$는 최대가 됩니다.
 
-$$\frac{\partial}{\partial\mathbf{w}}(\mathbf{w}^\mathsf{T}E(r)-\lambda\mathbf{w}^\mathsf{T}\mathbf{\Sigma w})=0$$
+$$\frac{\partial}{\partial\mathbf{w}}(\mathbf{w}^\mathsf{T}E(r)-\frac{\lambda}{2}\mathbf{w}^\mathsf{T}\mathbf{\Sigma w})=0$$
 
-$$E(r)-2\lambda\mathbf{\Sigma w}=0$$
+$$E(r)-\lambda\mathbf{\Sigma w}=0$$
 
-$$E(r)=2\lambda\mathbf{\Sigma w}$$
+$$E(r)=\lambda\mathbf{\Sigma w}$$
 
 이렇게 시장의 $$\mathbf{w}$$로부터 구한 $$E(r)$$을 내재 균형 수익률 $$\Pi$$라고 합니다.
 
-$$\Pi=2\lambda\mathbf{\Sigma w}\quad\cdots(1)$$
+$$\Pi=\lambda\mathbf{\Sigma w}\quad\cdots(1)$$
 
 ### 위험 회피성향
 
@@ -111,7 +126,7 @@ market_returns = market_prices.pct_change().dropna(how="all")
 
 (2)식을 이용해 **위험 회피성향**을 계산합니다.
 
-무위험 수익률 $$r_f$$는 최근 **KOFR 금리**인 `3.5%`로 설정했습니다.
+무위험 수익률 $$r_f$$는 최근 **KOFR 금리**인 `3.2%`로 설정했습니다.
 
 $$\lambda=\frac{E(r_m)-r_f}{\sigma_m^2}\quad\cdots(2)$$
 
@@ -124,36 +139,36 @@ lambd = (market_expected_return - risk_free_rate) / market_variance
 ```
 
 ```txt
-1.15769
+1.13373
 ```
 
 구한 $$\lambda$$와 (1)식을 이용해 **내재 균형 수익률** $$\Pi$$를 계산합니다.
 
-$$\Pi=2\lambda\mathbf{\Sigma w}\quad\cdots(1)$$
+$$\Pi=\lambda\mathbf{\Sigma w}\quad\cdots(1)$$
 
 ```py
 covariances = returns.cov() * 252
 
-implied_returns = 2 * lambd * covariances @ market_weights
+implied_returns = lambd * covariances @ market_weights
 ```
 
 ```txt
 Ticker
-000660.KS    0.191574
-005380.KS    0.129324
-005490.KS    0.127047
-035420.KS    0.111430
-051910.KS    0.153293
+000660.KS    0.093971
+005380.KS    0.063106
+005490.KS    0.062316
+035420.KS    0.054429
+051910.KS    0.075419
 dtype: float64
 ```
 
 즉, **시장 참여자들이 예상**하는 각 종목의 **기대수익률**은 아래와 같습니다.
 
-- `SK하이닉스`: 19.2%
-- `현대차`: 12.9%
-- `NAVER`: 12.7%
-- `POSCO홀딩스`: 11.1%
-- `LG화학`: 15.3%
+- `SK하이닉스`: 9.4%
+- `현대차`: 6.3%
+- `NAVER`: 6.2%
+- `POSCO홀딩스`: 5.4%
+- `LG화학`: 7.5%
 
 ### CAPM 기대수익률
 
@@ -168,11 +183,11 @@ betas = pd.Series([(np.cov(returns[ticker], market_returns)[0, 1] * 252) for tic
 ```
 
 ```txt
-000660.KS    1.226145
-005380.KS    1.072191
-035420.KS    0.932683
-005490.KS    1.097457
-051910.KS    1.342015
+000660.KS    1.227264
+005380.KS    1.072311
+035420.KS    0.931907
+005490.KS    1.097943
+051910.KS    1.342018
 dtype: float64
 ```
 
@@ -187,32 +202,30 @@ expected_returns = risk_free_rate + betas * (market_expected_return - risk_free_
 ```
 
 ```txt
-000660.KS    0.082979
-005380.KS    0.076578
-035420.KS    0.070778
-005490.KS    0.077629
-051910.KS    0.087796
+000660.KS    0.081939
+005380.KS    0.075634
+035420.KS    0.069921
+005490.KS    0.076677
+051910.KS    0.086609
 dtype: float64
 ```
 
 CAPM을 통해 계산한 각 종목의 **기대수익률**은 아래와 같습니다.
 
-- `SK하이닉스`: 8.3%
-- `현대차`: 7.7%
-- `NAVER`: 7.1%
-- `POSCO홀딩스`: 7.8%
-- `LG화학`: 8.8%
+- `SK하이닉스`: 8.2%
+- `현대차`: 7.6%
+- `NAVER`: 7.0%
+- `POSCO홀딩스`: 7.7%
+- `LG화학`: 8.7%
 
 내재 균형 수익률과 비교하면 아래와 같습니다.
 
 ```py
-implied_returns.plot.bar()
-expected_returns.plot.bar()
+df = pd.DataFrame({'Implied': implied_returns, 'CAPM': expected_returns}, index=expected_returns.index)
+df.plot.bar()
 ```
 
-| 내재 균형 수익률 | CAPM 기대수익률 |
-| --- | --- |
-| ![implied_returns](/assets/posts/2024-03-17-implied-equilibrium-return/implied_returns.png) | ![expected_returns](/assets/posts/2024-03-17-implied-equilibrium-return/expected_returns.png) |
+![expected_returns](/assets/posts/2024-03-17-implied-equilibrium-return/expected_returns.png)
 
 참고: [블랙-리터만 모형 - Qvious, Inc.](https://qvious.com/docs/1-2-3-2_BL/)
 

@@ -4,7 +4,7 @@ date: 2024-03-17
 author: Astro36
 category: python
 tags: [python, modern_portfolio_theory, black_litterman_model, implied_equilibrium_return, optimization_problem, reverse_optimization]
-thumbnail: /assets/posts/2024-03-17-implied-equilibrium-return/thumbnail.png
+thumbnail: /assets/posts/2024-03-17-implied-equilibrium-return/thumbnail.jpg
 ---
 
 **기대수익률**은 투자 결정에 중요한 역할을 하는 지표입니다.
